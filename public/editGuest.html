@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Edit Guest</title>    
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/addGuest.css">
+    </head>
+    <body style="margin:0">
+
+        <div id="top">
+            <div id="homelogo">
+                <img src="css/logocropped.png" id="logo">
+                <div id ="button2">
+                    <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+                </div>
+                <div id ="button1">
+                    <a href="events.html"><button type="button" id="b1">Events</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="middle">
+            <div id="head">
+                <p id="header">EDIT GUEST</p>
+            </div>
+            <div id="navigate">
+                <a href="guests.html"><button type="button" id="back">🡨 Guests</button></a>
+                
+            </div>
+            <form><!--SHOULD HAVE PLACEHOLDERS OF PREVIOUS VALUES BEFORE EDIT-->
+                <div class="form-group">
+                    <label for="guestname" id="guestnamelabel">Name:</label>
+                    <input type="text" id="guestname" name="guestname" placeholder="Guest Name"required>
+                </div>
+                <div class="form-group">
+                    <label for="guestcategory" id="guestcategorylabel">Category:</label>
+                    <input type="text" id="guestcategory" name="guestcategory" placeholder="Category">
+                </div>
+                <div class="form-group">
+                    <label for="gueststatus" id="gueststatuslabel">Status:</label>
+                    <select id="gueststatus" name="gueststatus">
+                        <option value="Pending">Pending</option>
+                        <option value="Not Going">Not Going</option>
+                        <option value="Going">Going</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <!--If user doesn't select means that guest has no table.-->
+                    <label for="guesttable" id="guesttablelabel">Table:</label> 
+                    <select id="guesttable" name="guesttable">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="Sample Table 1">Sample Table 1</option>
+                        <option value="Sample Table 2">Sample Table 2</option>
+                        <option value="Sample Table 3">Sample Table 3</option>
+                      </select>
+                </div>
+                <input type="submit" id="confirmbutton" value="Confirm">
+            </form>
+            
+            </div>
+        </div>
+        <div id="footer">
+            <div id="container">
+                <a href="collaborators.html">
+                    <button type="button" class="footerbutton" id="collaborators">
+                        <img src="css/collaborators_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Collaborators</p>
+                    </button>
+                </a>
+                <a href="guests.html">
+                    <button type="button" class="footerbutton" id="guest">
+                        <img src="css/guest_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Guest</p>
+                    </button>
+                </a>
+                <a href="todo.html">
+                    <button type="button" class="footerbutton" id="todo">
+                        <img src="css/todo_icon_black.png" class="btnicon">
+                        <p class="btnlabel">To-Do</p>
+                    </button>
+                </a>
+                <a href="budget.html">
+                    <button type="button" class="footerbutton" id="budget">
+                        <img src="css/budget_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Budget</p>
+                    </button>
+                </a>
+                <a href="chat.html">
+                    <button type="button" class="footerbutton2" id="chat">
+                        <img src="css/chat_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Chat</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

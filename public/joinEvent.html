@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Join Event</title>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="css/joinEvent.css">
+    </head>
+    <body style="margin:0">
+
+        <div id="top">
+            <div id="homelogo">
+                <img src="css/logocropped.png" id="logo">
+                <div id ="button2">
+                    <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+                </div>
+                <div id ="button1">
+                    <a href="events.html"><button type="button" id="b1">Events</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="middle">
+            <div id="head">
+                <p id="header">JOIN EVENT</p>
+            </div>
+            <div id="navigate">
+                <a href="events.html"><button type="button" id="back">🡨 Back</button></a>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="yourname" id="yourname">Your Name:</label>
+                    <input type="text" id="yourname" name="yourname" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="eventcode" id="eventcode">Event Code:</label>
+                    <input type="text" id="eventcode" name="eventcode" placeholder="Event Code" required>
+                </div>
+                <input type="submit" id="confirmbutton" value="Confirm">
+            </form>
+        </div>
+    </body>
+</html>

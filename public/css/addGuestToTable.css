@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'League Spartan Bold';
+    src: url(LeagueSpartan-Bold.ttf);
+  }
+@font-face {
+    font-family: 'League Spartan Regular';
+    src: url(LeagueSpartan-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url(Quicksand-Regular.ttf);
+  }
+  a{
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+#top{
+    margin: 0;
+    overflow:hidden;
+    background-color: #F1EFE7;
+}
+
+#homelogo{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px; 
+    
+}
+
+#button1{
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+#button2{
+    float: right;
+    margin-top: 20px;
+    margin-right: 70px;
+}
+
+#b1{
+    padding: 0%;
+    background: none;
+    font-size: 30px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#b1:hover{
+    text-decoration: underline;
+}
+
+#head{
+    border-bottom: 2px solid rgb(206, 206, 206);
+    margin: auto;
+    width: 96%;
+}
+#header{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'League Spartan Bold';
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#navigate{
+    overflow: hidden;
+    padding: 5px 30px 5px 30px;
+}
+
+.btnicon{
+    width:30px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+.btnlabel{
+    font-family: 'Quicksand';
+    text-align: center;
+    font-size: 15px;
+}
+
+.guestdeleteicon{
+    width:15px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+#back{
+    background: none;
+    font-size: 20px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#back:hover{
+    text-decoration: underline;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 180px;
+}
+
+.form-group label {
+    width: 200px;
+    font-family: 'League Spartan Regular';
+    font-size: 20px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.form-group input {
+    font-family: 'League Spartan Regular';
+    padding: 10px;
+    width: 50%;
+    border-color: #CFCFCF;
+    font-size: 20px;
+}
+
+.form-group select {
+    font-family: 'League Spartan Regular';
+    padding: 10px;
+    width: 52.5%;
+    border-color: #CFCFCF;
+    font-size: 20px;
+    border-width: 2px;
+}
+
+input[type=time]{
+    width: 20%;
+}
+
+#editTableconfirmbutton{
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    padding: 10px;
+    width:20%;
+    margin: 65px 30px 10px 10px;
+    float: right;
+}
+
+#addGuestEntrybutton{
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    padding: 10px;
+    width:50%;
+    margin: 15px 30px 20px 350px;
+    align-items: center;
+   
+}
+
+
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #F3F2EF;
+    height: 90px;
+    padding-left: 8%;
+    box-sizing: border-box;
+}
+
+.footerbutton {
+    border: none;
+    background: none;
+    padding: 15px 20px;
+    width: 120px;
+    margin-right: 100px;
+}
+.footerbutton:hover {
+    background-color: #eae8e1;
+}
+
+ul{
+    font-size: 20px;
+    font-family: 'Quicksand';
+    margin-left: 228px;
+    margin-top: -20px;
+}
+
+
+
+#content-container {
+    overflow-y: auto;
+    height: 350px;
+}
+
+

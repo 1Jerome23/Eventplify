@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'League Spartan Bold';
+    src: url(LeagueSpartan-Bold.ttf);
+  }
+@font-face {
+    font-family: 'League Spartan Regular';
+    src: url(LeagueSpartan-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url(Quicksand-Regular.ttf);
+  }
+  #container {
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto; /* Center align container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#top{
+    margin: 0;
+    overflow:hidden;
+}
+
+#middle{
+    background-color: #F1EFE7;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    overflow:hidden;
+}
+
+
+#bottom{
+    display: flex;
+    margin-left: 30px;
+    margin-right: 50px;
+    padding-top: 30px;
+    padding-left: 230px;
+    padding-right: 100px;
+    overflow:hidden;
+    max-width: 1400px; 
+}
+
+#homelogo{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px; 
+    
+}
+
+#button1{
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+#button2{
+    float: right;
+    margin-top: 20px;
+    margin-right: 70px;
+}
+
+#b1{
+    padding: 0%;
+    background: none;
+    font-size: 30px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#b1:hover{
+    text-decoration: underline;
+}
+
+#cake{
+    width:180px;
+    float:left;
+    margin-left: 50px;
+}
+#sky{
+    width: 180px;
+    margin-top: 70px ;
+    padding-left: 20px;
+}
+#maintext{
+    float:right;
+    margin-right: 220px;
+}
+#mainbig{
+    font-size:65px;
+    font-family: 'League Spartan Bold';
+    font-weight: bold;
+    text-align: center;
+}
+#mainsmall{
+    text-align: center;
+    font-family: 'Quicksand';
+    font-size: 20px;
+}
+
+#navigate{
+    padding:0;
+    background:none;
+    border: none;
+    margin-left:20px;
+    width: 150px;
+    height:120px;
+}
+
+#plan{
+    width: 50px;
+}
+#btntext{
+    font-family: 'Quicksand';
+}
