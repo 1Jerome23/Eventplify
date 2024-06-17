@@ -5,9 +5,9 @@ var app = new express();
 
 const path = require("path"); // our path directory
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
-/* For file uplods */
+/* For file uploads */
 const fileUpload = require("express-fileupload");
 app.use(fileUpload()); //initialize file upload middleware
 
