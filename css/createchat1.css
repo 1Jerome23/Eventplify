@@ -32,8 +32,8 @@ body{
 }
 
 #middle{
-    height: 71%;
-    overflow-y: auto;
+    height: 61%;
+
 }
 
 #homelogo{
@@ -114,28 +114,36 @@ body{
     overflow-y: auto;
     height: 50vh;
 }
-label{
-    font-family: 'Quicksand';
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 180px;
+}
+.form-group label {
+    width: 200px;
+    font-family: 'League Spartan Regular';
     font-size: 20px;
-}
-label, input, select{
-    margin-bottom: 2%;
-}
-input, select{
-    padding: 5px;
-    font-size: 20px;
-    width: 25%;
-    border-radius: 10px;
-    border: 2px solid rgb(171, 171, 171);
-}
-#clabel{
+    text-align: right;
     margin-right: 20px;
 }
-#mlabel{
-    margin-right: 39px;
+
+.form-group input {
+    font-family: 'League Spartan Regular';
+    padding: 10px;
+    width: 50%;
+    border-color: #CFCFCF;
+    font-size: 20px;
 }
-#rlabel{
-    margin-right: 75px;
+
+.form-group select {
+    font-family: 'League Spartan Regular';
+    padding: 10px;
+    width: 50%;
+    border-color: #CFCFCF;
+    font-size: 20px;
+    border-width: 2px;
 }
 
 #containeradd{
@@ -157,6 +165,19 @@ input, select{
     align-items: center;
 }
 
+#bygroupbutton,#individualbutton{
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 5px 15px 5px 15px;
+    margin: 10px 30px 10px 20px;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+}
 #formcontainer{
     margin-top: 2%;
     text-align: center;
@@ -214,3 +235,4 @@ input, select{
     margin-left: auto;
     margin-right:auto;
 }
+
