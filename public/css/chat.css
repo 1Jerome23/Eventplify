@@ -32,8 +32,8 @@ body{
 }
 
 #middle{
-    height: 61%;
-
+    height: 71%;
+    overflow-y: auto;
 }
 
 #homelogo{
@@ -110,47 +110,58 @@ body{
     padding-left: 5px;
     padding-right: 5px;
 }
-#content{
+#entries{
     overflow-y: auto;
     height: 50vh;
 }
+#entry{
+    background-color: #F1EFE7;
+    border-radius: 10px;
+    width:94%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    padding: 10px 20px 10px 20px;
+    overflow: hidden;
+    position: relative;
+}
+#name{
+    font-size: 22px;
+    margin:0;
+    font-family: 'Quicksand';
+}
+#message{
+    font-size: 17px;
+    margin:0;
+    color: #988a8a;
+    font-family: 'Quicksand';
+}
+#editbutton{
+    margin-top:0;
+    padding-top: 12px;
+    background: none;
+    border: none;
+    position:absolute;
+    right:40px;
+}   
+#trashbutton{
+    margin-top:0;
+    padding-top: 12px;
+    background: none;
+    border: none;
+    position:absolute;
+    right:10px;
+} 
+#editicon,#trashicon{
+    width:25px;
+}
 
-.form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-left: 180px;
-}
-.form-group label {
-    width: 200px;
-    font-family: 'League Spartan Regular';
-    font-size: 20px;
-    text-align: right;
-    margin-right: 20px;
-}
-
-.form-group input {
-    font-family: 'League Spartan Regular';
-    padding: 10px;
-    width: 50%;
-    border-color: #CFCFCF;
-    font-size: 20px;
-}
-
-.form-group select {
-    font-family: 'League Spartan Regular';
-    padding: 10px;
-    width: 50%;
-    border-color: #CFCFCF;
-    font-size: 20px;
-    border-width: 2px;
-}
 
 #containeradd{
     height: 7vh;
     margin: 0;
 }
-#createbutton{
+#addbutton{
     border: none;
     border-radius: 10px;
     color: black;
@@ -163,24 +174,6 @@ body{
     display: inline-flex; 
     justify-content: center;
     align-items: center;
-}
-
-#bygroupbutton,#individualbutton{
-    border: none;
-    border-radius: 10px;
-    color: black;
-    background-color: #F1EFE7;
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    padding: 5px 15px 5px 15px;
-    margin: 10px 30px 10px 20px;
-    display: inline-flex; 
-    justify-content: center;
-    align-items: center;
-}
-#formcontainer{
-    margin-top: 2%;
-    text-align: center;
 }
 
 #footer{
@@ -235,4 +228,3 @@ body{
     margin-left: auto;
     margin-right:auto;
 }
-

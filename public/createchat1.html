@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Create Chat</title>    
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/createchat1.css">
+    </head>
+    <body style="margin:0">
+
+        <div id="top">
+            <div id="homelogo">
+                <img src="css/logocropped.png" id="logo">
+                <div id ="button2">
+                    <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+                </div>
+                <div id ="button1">
+                    <a href="events.html"><button type="button" id="b1">Events</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="middle">
+            <div id="head">
+                <p id="header">CREATE CHAT</p>
+            </div>
+            <div id="navigate">
+                <a href="chat.html"><button type="button" id="event">🡨 Chat</button></a>
+            </div>
+            <form id="form">
+            <div id="content">
+                <div id="formcontainer">
+                    <div class="form-group">
+                    <label for="chatname" id="clabel">Chat Name:</label>
+                    <input type="text" id="chatname"></div>
+                </br>
+               
+
+<!-- user can select multiple options-->
+
+                <div class="form-group">
+                <label for="members" id="rlabel">Members: </label>
+                <select name="members" id="members" multiple>
+                            <option value="1">Person 1 </option>
+                            <option value="2">Person 2 </option>                 
+                            <option value="3">Person 3</option>
+                            <option value="4">Person 4</option> 
+                            <option value="5">Person 5</option> 
+                            <option value="6">Person 6</option> 
+                        
+                </select>
+            </div>
+            </div>
+                    </br>
+                </div>
+            </div>
+            <div id="containeradd">    
+                <button type="button" id="createbutton">Create</button>
+            </div>
+        </form>
+        </div>
+        <div id="footer">
+            <div id="container">
+                <a href="collaborators.html">
+                    <button type="button" class="footerbutton" id="collaborators">
+                        <img src="css/collaborators_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Collaborators</p>
+                    </button>
+                </a>
+                <a href="guests.html">
+                    <button type="button" class="footerbutton" id="guest">
+                        <img src="css/guest_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Guest</p>
+                    </button>
+                </a>
+                <a href="todo.html">
+                    <button type="button" class="footerbutton" id="todo">
+                        <img src="css/todo_icon_black.png" class="btnicon">
+                        <p class="btnlabel">To-Do</p>
+                    </button>
+                </a>
+                <a href="budget.html">
+                    <button type="button" class="footerbutton" id="budget">
+                        <img src="css/budget_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Budget</p>
+                    </button>
+                </a>
+                <a href="chat.html">
+                    <button type="button" class="footerbutton2" id="chat">
+                        <img src="css/chat_icon_black.png" class="btnicon">
+                        <p class="btnlabel">Chat</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </body>
+</html>

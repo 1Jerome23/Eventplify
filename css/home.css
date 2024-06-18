@@ -21,6 +21,7 @@ body{
 #top{
     margin: 0;
     overflow:hidden;
+    max-height: 17%;
 }
 
 #middle{

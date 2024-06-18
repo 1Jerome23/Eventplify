@@ -6,7 +6,7 @@
                 <img src="css/logo.png" id="logo">
             </div>
         <h1 id="header">SIGN UP</h1>
-        <form>
+        <form id="signup_form" action="/api/users" method = "POST">
             <input type="email" id="email" name="email" placeholder="Email" required><br>
             <input type="username" id="username" name="username" placeholder="Username"required><br>
             <input type="password" id="password" name="password" placeholder="Password"required><br>
@@ -17,4 +17,7 @@
         </form>
         <p>Have an account? <a href="login.html">Log In</a></p>
         </body>
+
+        <script src="javascript/user.js"></script>
+
 </html>
