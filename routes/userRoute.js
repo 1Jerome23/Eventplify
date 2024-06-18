@@ -5,7 +5,7 @@ const User = require('../models/User.js');
 
 router.post('/', async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { email, username, password} = req.body;
 
     const existingUser = await User.findOne({ username });
     if (existingUser) {
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10); 
-    const newUser = new User({ username, password: hashedPassword });
+    const newUser = new User({ email, username, password: hashedPassword });
     
     await newUser.save();
     res.json(newUser);
@@ -50,14 +50,6 @@ router.get('/is-authenticated', async (req, res) => {
     res.send({ authenticated: true, user: { username: user.username } });
   } else {
     res.send({ authenticated: false });
-  }
-});
-
-router.get('/id', async (req, res) => {
-  if (req.user) {
-    res.json({ userId: req.user._id }); // Assuming _id is the user id in your User model
-  } else {
-    res.status(401).json({ message: 'Not authenticated' });
   }
 });
 

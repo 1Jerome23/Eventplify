@@ -4,6 +4,7 @@ $(document).ready(function() {
       event.preventDefault();
       const username = $('#signup_username').val();
       const password = $('#signup_password').val();
+      const email = $('#signup_email').val();
   
       // Send a POST request to the server for registration
       fetch('/user', {
@@ -11,7 +12,7 @@ $(document).ready(function() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, username, password }),
       })
         .then(response => {
           if (response.ok) {
@@ -48,7 +49,7 @@ $(document).ready(function() {
         .then(data => {
           if (data.message === 'Logged in!') {
             alert('Login successful');
-            window.location.href = 'plan.html'; // Redirect to plan.html after successful login
+            window.location.href = 'home.html'; 
           } else {
             alert('Invalid login credentials');
           }
@@ -58,42 +59,17 @@ $(document).ready(function() {
           alert('An error occurred during login');
         });
     });
-    
-    $('.tab a').on('click', async function(e) {
-      e.preventDefault();
-      const target = $(this).attr('href');
-  
-      try {
-        // Check if the user is authenticated
-        const response = await fetch('/user/is-authenticated');
-        const data = await response.json();
-        
-        if (target === '#plan' && !data.authenticated) {
-          alert('Please log in or sign up to access the Plan tab.');
-        } else {
-          $('.tab.active').removeClass('active');
-          $(this).parent().addClass('active');
-  
-          $('.tab-content > div').hide();
-          $(target).fadeIn(600);
-        }
-      } catch (error) {
-        console.error(error);
-        alert('An error occurred while checking user authentication');
-      }
-    });
-  
   
     $('.plan').on('click', function(event) {
       event.preventDefault();
-      redirectToPlanPage();
+      redirectToHomePage();
     });
       
-    async function redirectToPlanPage() {
+    async function redirectToHomePage() {
       const response = await fetch('/user/is-authenticated');
       const data = await response.json();
       if (data.authenticated) {
-        window.location.href = 'plan.html';
+        window.location.href = 'home.html';
   
       } else {
         alert('Please register and log in to access the task page.');
