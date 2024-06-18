@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Table</title>
+        <link rel="stylesheet" href="css/editTable.css">
+    </head>
+    <body style="margin:0">
+
+        <div id="top">
+            <div id="homelogo">
+                <img src="css/logocropped.png" id="logo">
+                <div id ="button2">
+                    <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+                </div>
+                <div id ="button1">
+                    <a href="events.html"><button type="button" id="b1">Events</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="middle">
+            <div id="head">
+                <p id="header">EDIT TABLE</p>
+            </div>
+            <div id="navigate">
+                <a href="tables.html"><button type="button" id="back">🡨 Tables</button></a>
+            </div>
+            <div id="content-container">
+            <form>
+                <div class="form-group">
+                    <label for="tablename" id="tablenamelabel">Table Name:</label>
+                    <input type="text" id="tablename" name="tablename" placeholder="Table Name"required>
+                </div>
+                <label for="guests" id="guestslabel">Guests:</label>
+                <div class="form-group">
+                    
+                    <ul id="guestlist">
+                        <li>John<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>Sarah<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>John<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>Sarah<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>John<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>Sarah<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>John<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>Sarah<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>John<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>Sarah<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>John<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                        <li>Sarah<img src="css/trash_icon.png" class="guestdeleteicon"></li>
+                      </ul>
+                </div>
+                <a href="addGuesttoTable.html"><button type="button" id="addGuestbutton">Add Guest</button></a>
+                <input type="submit" id="editTableconfirmbutton" value="Confirm">
+                
+            </form>
+</div>
+        </div>
+        <div id="footer">
+            <a href="collaborators.html"><button type="button" class="footerbutton" id="collaborators">
+                <img src="css/collaborators_icon_black.png" class="btnicon">
+                <p class="btnlabel">Collaborators</p>
+            </button> </a>
+            <a href="guests.html"><button type="button" class="footerbutton" id="guestlist">
+                <img src="css/guest_icon_black.png" class="btnicon">
+                <p class="btnlabel">Guest List</p>
+            </button> </a>
+            <a href="todo.html"><button type="button" class="footerbutton" id="todo">
+                <img src="css/todo_icon_black.png" class="btnicon">
+                <p class="btnlabel">To-Do</p>
+            </button> </a>
+            <a href="budget.html"><button type="button" class="footerbutton" id="budget">
+                <img src="css/budget_icon_black.png" class="btnicon">
+                <p class="btnlabel">Budget</p>
+            </button> </a>
+            <a href="chat.html"><button type="button" class="footerbutton" id="chat">
+                <img src="css/chat_icon_black.png" class="btnicon">
+                <p class="btnlabel">Chat</p>
+            </button> </a>
+        </div>
+    </body>
+</html>

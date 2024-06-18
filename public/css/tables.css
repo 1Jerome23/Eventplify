@@ -1,0 +1,273 @@
+@font-face {
+    font-family: 'League Spartan Bold';
+    src: url(LeagueSpartan-Bold.ttf);
+  }
+@font-face {
+    font-family: 'League Spartan Regular';
+    src: url(LeagueSpartan-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url(Quicksand-Regular.ttf);
+  }
+
+a{
+    text-decoration: none;
+}
+
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#top{
+    margin: 0;
+    overflow:hidden;
+    background-color: #F1EFE7;
+}
+
+#homelogo{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px; 
+    
+}
+
+#button1{
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+#button2{
+    float: right;
+    margin-top: 20px;
+    margin-right: 70px;
+}
+
+#b1{
+    padding: 0%;
+    background: none;
+    font-size: 30px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#b1:hover{
+    text-decoration: underline;
+}
+
+#head{
+    border-bottom: 2px solid rgb(206, 206, 206);
+    margin: auto;
+    width: 96%;
+}
+#header{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'League Spartan Bold';
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#navigate{
+    overflow: hidden;
+    padding: 5px 30px 5px 30px;
+    margin-top: 10px;
+}
+
+#search{
+    font-size: 20px;
+    font-family: 'Quicksand';
+    border-radius: 10px;
+    border: 2px solid black;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#filterbutton{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    padding: 10px;
+    width:10%;
+    float:right;
+}
+
+#sortbutton{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    padding: 10px;
+    width:10%;
+    float:right;
+}
+
+
+
+#entries{
+    overflow-y: auto;
+    height: 270px;
+}
+#entry{
+    background-color: #F1EFE7;
+    border-radius: 10px;
+    width:94%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    padding: 10px 20px 10px 20px;
+    overflow: hidden;
+    position: relative;
+}
+#name{
+    font-size: 25px;
+    margin:0;
+    font-family: 'Quicksand';
+}
+#guest{
+    font-size: 15px;
+    margin:0;
+    color: #BEB1B1;
+    font-family: 'Quicksand';
+}
+#editbutton{
+    margin-top:0;
+    padding-top: 12px;
+    background: none;
+    border: none;
+    position:absolute;
+    right:10px;
+}    
+#editicon,#trashicon{
+    width:25px;
+    margin-left: 10px;
+}
+
+#fixed-buttons {
+    position: fixed;
+    bottom: 80px;
+    width: 100%;
+    text-align: right;
+    z-index: 1000;  
+    background-color: #F5F5F5;  
+    padding: 10px 20px;  
+    margin-right: 20px;
+}
+
+#addtablebutton {
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    padding: 6px;
+    width: 15%;
+    margin: 0 10px;  /* Margin for spacing between buttons */
+    display: inline-flex;  /* for placing buttons in line */
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+.btnicon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-right: 10px; 
+}
+
+.btnlabel {
+    font-family: 'Quicksand';
+    font-size: 20px; 
+}
+#footer{
+    position:fixed;
+    bottom: 0;
+    background-color: #F3F2EF;
+    height:90px;
+    width:100%;
+    padding-left: 250px;
+}
+
+
+.btnicon{
+    width:30px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+.btnlabel{
+    font-family: 'Quicksand';
+    text-align: center;
+    font-size: 15px;
+}
+#eventname {
+    background: none;
+    font-size: 20px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#eventname:hover {
+    text-decoration: underline;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the footer */
+    background-color: #F3F2EF;
+    height: 90px;
+    padding-left: 8%;
+    box-sizing: border-box;
+}
+
+.footerbutton {
+    border: none;
+    background: none;
+    padding: 15px 20px;
+    width: 120px;
+    margin-right: 100px;
+}
+.footerbutton:hover {
+    background-color: #eae8e1;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the footer */
+    background-color: #F3F2EF;
+    height: 90px;
+    padding-left: 8%;
+    box-sizing: border-box;
+}
+
+.footerbutton {
+    border: none;
+    background: none;
+    padding: 15px 20px;
+    width: 120px;
+    margin-right: 100px;
+}
+.footerbutton:hover {
+    background-color: #eae8e1;
+}

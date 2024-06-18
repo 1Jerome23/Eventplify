@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Events</title>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="css/events.css">
+    </head>
+    <body style="margin:0">
+
+        <div id="top">
+            <div id="homelogo">
+                <img src="css/logocropped.png" id="logo">
+                <div id ="button2">
+                    <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+                </div>
+                <div id ="button1">
+                    <a href="events.html"><button type="button" id="b1">Events</button></a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="middle">
+            <div id="head">
+                <p id="header">EVENTS</p>
+            </div>
+            <div id="navigate">
+                <input type="search" id="search"placeholder="Search...">
+                
+                <button type="button" id="filterbutton">Filter</button>
+                <button type="button" id="sortbutton">Sort</button>
+            </div>
+            <div id="entries">
+                <div id="entry">
+                    <button type="button" id="editbutton">
+                        <a  href="editEvent.html">  <img src="css/edit_icon.png" id="editicon"></a> 
+                        <img src="css/trash_icon.png" id="trashicon">
+                    </button> <!-- edit button to appear if event=true-->
+                    <a href="events_page_detailed.html"><button type="button" id="eventname"><p id="name">Name of Event</p></button></a> 
+                    <p id="role">Description</p>
+                    <p id="date">Date</p>
+                    <p id="location">Location</p>
+                </div>
+                <div id="entry">
+                    <button type="button" id="editbutton">
+                        <img src="css/edit_icon.png" id="editicon">
+                        <img src="css/trash_icon.png" id="trashicon">
+                    </button> <!-- edit button to appear if event=true-->
+                    <a href="events_page_detailed.html"><button type="button" id="eventname"><p id="name">Name of Event</p></button></a> 
+                    <p id="role">Description</p>
+                    <p id="date">Date</p>
+                    <p id="location">Location</p>
+                </div>
+                <div id="entry">
+                    <button type="button" id="editbutton">
+                        <img src="css/edit_icon.png" id="editicon">
+                        <img src="css/trash_icon.png" id="trashicon">
+                    </button> <!-- edit button to appear if event=true-->
+                    <a href="events_page_detailed.html"><button type="button" id="eventname"><p id="name">Name of Event</p></button></a> 
+                    <p id="role">Description</p>
+                    <p id="date">Date</p>
+                    <p id="location">Location</p>
+                </div>
+                <div id="entry">
+                    <button type="button" id="editbutton">
+                        <img src="css/edit_icon.png" id="editicon">
+                        <img src="css/trash_icon.png" id="trashicon">
+                    </button> <!-- edit button to appear if event=true-->
+                    <a href="events_page_detailed.html"><button type="button" id="eventname"><p id="name">Name of Event</p></button></a> 
+                    <p id="role">Description</p>
+                    <p id="date">Date</p>
+                    <p id="location">Location</p>
+                </div>
+            <!--extra entries to fill the space-->
+                <!--entries are scrollable-->
+            <!--end of extra entries-->
+            </div>
+            <div id="containeradd">
+                <a href="addNewEvent.html"><button type="button" id="addbutton">
+                    <img src="css/plus_icon.png" class="btnicon">
+                    <span class="btnlabel">Add New Event</span>
+                </button></a>
+                <a href="joinEvent.html"><button type="button" id="joinbutton">
+                    <img src="css/plus_icon.png" class="btnicon">
+                    <span class="btnlabel">Join Existing Event</span>
+                </button></a>
+            </div>
+    </body>
+</html>
