@@ -17,9 +17,6 @@ $(document).ready(function() {
         .then(response => {
           if (response.ok) {
             alert('Registration successful');
-            $('.tab.active').removeClass('active');
-            $('#login').addClass('active'); // Switch to the "Log In" tab
-  
           } else {
             response.json().then(data => {
               alert(data.error);

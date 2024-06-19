@@ -35,6 +35,7 @@ app.set("view engine", "hbs");
 hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
 app.use("/", todoRouter);
+app.use("/user", userRouter);
 
 /* For file uploads */
 const fileUpload = require("express-fileupload");
