@@ -46,7 +46,7 @@ var hbs = require("hbs");
 app.set("view engine", "hbs");
 hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
-// app.use("/", todoRouter); ///api/todo?
+app.use("/", todoRouter); 
 app.use("/api/users", userRouter);
 
 /* For file uploads */
