@@ -1,13 +1,16 @@
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
-const connectionString = process.env.DATABASE_URL;
-console.log(connectionString);
 var express = require("express");
 var app = new express();
+const dotenv = require('dotenv');
+dotenv.config();
+const connectionString = process.env.DATABASE_URL;
+
 
 try {
   mongoose.connect(connectionString);
   console.log("Connected to MongoDB successfully");
+
 } catch (err) {
   console.error(err);
 }
