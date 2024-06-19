@@ -4,6 +4,8 @@ const connectionString = process.env.DATABASE_URL;
 console.log(connectionString);
 var express = require("express");
 var app = new express();
+require('dotenv').config();
+
 try {
   mongoose.connect(connectionString);
   console.log("Connected to MongoDB successfully");
