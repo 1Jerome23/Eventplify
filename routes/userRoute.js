@@ -3,9 +3,9 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require('../models/User.js');
 
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
-    const { email, username, password} = req.body;
+    const { email, username, password } = req.body;
 
     const existingUser = await User.findOne({ username });
     if (existingUser) {
@@ -34,7 +34,6 @@ router.post('/login', async (req, res) => {
       return res.status(400).send("Invalid password");
     }
   
-    // Store only the userId in the session
     req.session.userId = user._id;
     res.send({ message: "Logged in!", user: { username: user.username } });
   } catch (error) {
@@ -42,17 +41,14 @@ router.post('/login', async (req, res) => {
   }
 });
 
-
 router.get('/is-authenticated', async (req, res) => {
   if (req.session && req.session.userId) {
-    // If you need to send back the username or other user details, fetch the user from the database
     const user = await User.findById(req.session.userId);
     res.send({ authenticated: true, user: { username: user.username } });
   } else {
     res.send({ authenticated: false });
   }
 });
-
 
 router.get('/logout', (req, res) => {
   req.session.destroy(err => {
