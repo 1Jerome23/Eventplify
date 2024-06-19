@@ -27,6 +27,7 @@ const Budget = require("./models/Budget");
 
 // Routing Initialization
 const todoRouter = require("./routes/todoRoute.js");
+const userRouter = require("./routes/userRoute.js");
 
 // Initializing handlebars
 var hbs = require("hbs");
