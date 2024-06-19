@@ -28,7 +28,7 @@ body{
     background-color: #F1EFE7;
     margin-left: 4%;
     margin-right: 4%;
-    padding: 1%;
+    padding: 2%;
     overflow:auto;
     height:52%
 }
@@ -80,14 +80,14 @@ body{
 }
 
 #cake{
-    width:180px;
+    width:13%;
     max-width: 100%;
     height: auto;
     float:left;
     margin-left: 50px;
 }
 #sky{
-    width: 180px;
+    width: 13%;
     max-width: 100%;
     height: auto;
     margin-top: 70px ;
