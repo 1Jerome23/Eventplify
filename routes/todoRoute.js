@@ -7,8 +7,6 @@ const Todo = require("../models/Todo");
 const router = Router();
 const { format, parse } = require("date-fns");
 
-// require("../helpers");
-
 router.get("/todo", async (req, res) => {
   var event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
   var todo = await Todo.find({ event: event }).sort({ date: 1 });
@@ -37,6 +35,10 @@ router.get("/todo", async (req, res) => {
   });
 });
 
+router.get("/addtodo", async (req, res) => {
+  res.render("todo_add");
+});
+
 function groupTodosByDate(todos) {
   const groupedTodos = {};
   todos.forEach((todo) => {
@@ -48,5 +50,9 @@ function groupTodosByDate(todos) {
   });
   return groupedTodos;
 }
+
+router.get("/modifyTodoStatus", todoController.modifyTodo);
+router.delete("/deleteTask/:id", todoController.deleteTask);
+router.post("/todoSubmit", todoController.addTodo);
 
 module.exports = router;

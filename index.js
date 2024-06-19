@@ -13,6 +13,8 @@ try {
 
 const path = require("path"); // our path directory
 
+app.use(express.json()); // use json
+app.use(express.urlencoded({ extended: true })); // files consist of more than strings
 app.use(express.static("public"));
 
 // Collection Initialization
@@ -28,7 +30,6 @@ const todoRouter = require("./routes/todoRoute.js");
 
 // Initializing handlebars
 var hbs = require("hbs");
-const helpers = require("./helpers");
 app.set("view engine", "hbs");
 hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
