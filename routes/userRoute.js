@@ -16,7 +16,7 @@ router.post('/signup', async (req, res) => {
     const newUser = new User({ email, username, password: hashedPassword });
     
     await newUser.save();
-    res.json(newUser);
+    return res.redirect('/login.html');
   } catch (error) {
     res.status(500).json({ error: 'An error occurred during user registration' });
   }
@@ -24,9 +24,9 @@ router.post('/signup', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const user = await User.findOne({ username: req.body.username });
+    const user = await User.findOne({ email: req.body.email });
     if (!user) {
-      return res.status(400).send("Invalid username");
+      return res.status(400).send("Invalid email");
     }
 
     const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
     }
   
     req.session.userId = user._id;
-    res.send({ message: "Logged in!", user: { username: user.username } });
+    return res.redirect('/home.html');
   } catch (error) {
     res.status(500).send("Something went wrong");
   }
@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 router.get('/is-authenticated', async (req, res) => {
   if (req.session && req.session.userId) {
     const user = await User.findById(req.session.userId);
-    res.send({ authenticated: true, user: { username: user.username } });
+    res.send({ authenticated: true, user: { email: user.email } });
   } else {
     res.send({ authenticated: false });
   }

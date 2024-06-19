@@ -52,41 +52,40 @@ $(document).ready(function() {
   // User login logic
   $('#login_form').on('submit', function (event) {
     event.preventDefault();
-    const username = $('#login_username').val();
-    const password = $('#login_password').val();
-
+    const email = $('#email').val(); // Assuming your input id is 'email'
+    const password = $('#password').val(); // Assuming your input id is 'password'
+  
     // Validate inputs
-    if (!username || !password) {
-      alert('Username and password are required');
+    if (!email || !password) {
+      alert('Email and password are required');
       return;
     }
-
+  
     // Send a POST request to the server for login
     fetch('/api/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     })
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else if (response.status === 400) {
-          throw new Error('Invalid username or password');
-        } else {
-          throw new Error('Login failed');
+    .then(response => {
+      if (!response.ok) {
+        if (response.status === 400) {
+          throw new Error('Invalid email or password');
         }
-      })
-      .then(data => {
-        alert('Login successful');
-        window.location.href = '../public/home.html'; // Redirect to home.html on successful login
-      })
-      .catch(error => {
-        console.error('Error during login:', error.message);
-        alert('Invalid username or password');
-      });
+        throw new Error('Login failed');
+      }
+      return response.json();
+    })
+    .then(data => {
+      alert('Login successful');
+      window.location.href = '../public/home.html'; // Redirect to home.html on successful login
+    })
+    .catch(error => {
+      console.error('Error during login:', error.message);
+      alert(error.message); // Alert the user with the error message
+    });
   });
 
-  // Other functions or event handlers
 });

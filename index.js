@@ -5,6 +5,7 @@ var app = new express();
 const dotenv = require('dotenv');
 dotenv.config();
 const connectionString = process.env.DATABASE_URL;
+const session = require('express-session'); 
 
 
 try {
@@ -32,6 +33,13 @@ const Budget = require("./models/Budget");
 // Routing Initialization
 const todoRouter = require("./routes/todoRoute.js");
 const userRouter = require("./routes/userRoute.js");
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 1800000  } // 30 minutes
+}));
 
 // Initializing handlebars
 var hbs = require("hbs");
