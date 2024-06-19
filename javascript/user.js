@@ -4,27 +4,28 @@ $(document).ready(function() {
     event.preventDefault();
     
     // Fetch input values
-    const username = $('#signup_username').val();
-    const password = $('#signup_password').val();
+    const username = $('#username').val();
+    const password = $('#password').val();
     const confirmPassword = $('#confirmpassword').val();
-    const email = $('#signup_email').val();
+    const email = $('#email').val();
 
-    // Validate inputs
-    if (!username || !password || !confirmPassword || !email) {
-      alert('All fields are required');
-      return;
-    }
+  // Email validation
+  if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|edu\.ph)$/.test(email)) {
+    alert('Invalid email format.');
+    return;
+  }
 
-    if (password !== confirmPassword) {
-      alert('Passwords do not match');
-      return;
-    }
+  // Password validation
+  if (!password || !/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{12,36}$/.test(password)) {
+    alert('Password must be 12-36 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+    return;
+  }
 
-    if (password.length < 8) {
-      alert('Password must be at least 8 characters long');
-      return;
-    }
-
+  // Password match validation
+  if (password !== confirmPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
     // If all validations pass, proceed with registration
     fetch('/api/users/signup', {
       method: 'POST',
@@ -36,7 +37,6 @@ $(document).ready(function() {
       .then(response => {
         if (response.ok) {
           alert('Registration successful');
-          window.location.href = '../public/login.html'; // Redirect to login.html on success
         } else {
           response.json().then(data => {
             alert(data.error);
@@ -80,7 +80,6 @@ $(document).ready(function() {
     })
     .then(data => {
       alert('Login successful');
-      window.location.href = '../public/home.html'; // Redirect to home.html on successful login
     })
     .catch(error => {
       console.error('Error during login:', error.message);

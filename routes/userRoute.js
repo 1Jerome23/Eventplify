@@ -5,7 +5,12 @@ const User = require('../models/User.js');
 
 router.post('/signup', async (req, res) => {
   try {
-    const { email, username, password } = req.body;
+    const { email, username, password, confirmPassword  } = req.body;
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+      return res.status(400).json({ error: 'Passwords do not match.' });
+    }
 
     const existingUser = await User.findOne({ username });
     if (existingUser) {
