@@ -8,24 +8,52 @@ $(document).ready(function() {
     const password = $('#password').val();
     const confirmPassword = $('#confirmpassword').val();
     const email = $('#email').val();
+    
+    // Debug statements to check input values
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Confirm Password:', confirmPassword);
+    console.log('Email:', email);
+    
+    // Email validation
+    if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|edu\.ph)$/.test(email)) {
+      alert('Invalid email format.');
+      return;
+    }
+    
+    // Password validation
+    if (!password || password.length < 8) {
+      alert('Password must be at least 8 characters long.');
+      return;
+    }
+    
+    if (!/[A-Z]/.test(password)) {
+      alert('Password must contain at least one uppercase letter.');
+      return;
+    }
+    
+    if (!/[a-z]/.test(password)) {
+      alert('Password must contain at least one lowercase letter.');
+      return;
+    }
+    
+    if (!/[0-9]/.test(password)) {
+      alert('Password must contain at least one number.');
+      return;
+    }
+    
+    if (!/[!@#$%^&*]/.test(password)) {
+      alert('Password must contain at least one special character (!@#$%^&*).');
+      return;
+    }
+    
+    if (password !== confirmPassword) {
+      alert('Passwords do not match.');
+      console.log('Password:', password);
+      console.log('Confirm Password:', confirmPassword);
+      return;
+    }
 
-  // Email validation
-  if (!email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|edu\.ph)$/.test(email)) {
-    alert('Invalid email format.');
-    return;
-  }
-
-  // Password validation
-  if (!password || !/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{12,36}$/.test(password)) {
-    alert('Password must be 12-36 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
-    return;
-  }
-
-  // Password match validation
-  if (password !== confirmPassword) {
-    alert('Passwords do not match.');
-    return;
-  }
     // If all validations pass, proceed with registration
     fetch('/api/users/signup', {
       method: 'POST',
@@ -86,5 +114,4 @@ $(document).ready(function() {
       alert(error.message); // Alert the user with the error message
     });
   });
-
 });
