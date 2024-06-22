@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { addEvent } = require('../controllers/addEventController'); // Assuming addEvent function is defined in eventController
+const { addEvent } = require('../controllers/EventController'); // Assuming addEvent function is defined in eventController
 
 // Route to add a new event
 router.post('/add', async (req, res) => {

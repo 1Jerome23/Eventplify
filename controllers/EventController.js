@@ -13,7 +13,7 @@ exports.addEvent = async (req, res) => {
     const { name, description, date, startTime, endTime, location } = req.body;
 
     const newEvent = new Event({ 
-      owner: req.user._id, // Assuming user is authenticated and req.user._id is available
+      owner: req.session.userId, // Assuming user ID is stored in req.session.userId
       name,
       description,
       date,
