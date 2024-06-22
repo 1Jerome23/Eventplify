@@ -68,14 +68,24 @@ body{
     margin-right: 70px;
 }
 
-#b1{
+#eventsButton{
     padding: 0%;
     background: none;
     font-size: 30px;
     border: none;
     font-family: 'Quicksand';
 }
-#b1:hover{
+#eventsButton:hover{
+    text-decoration: underline;
+}
+#profileButton{
+    padding: 0%;
+    background: none;
+    font-size: 30px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#profileButton:hover{
     text-decoration: underline;
 }
 
@@ -109,7 +119,31 @@ body{
     font-size: 20px;
 }
 
-#navigate{
+#planEventsButton{
+    padding:0;
+    background:none;
+    border: none;
+    margin-right:15%;
+    width: 150px;
+    height:120px;
+}
+#collaborateButton{
+    padding:0;
+    background:none;
+    border: none;
+    margin-right:15%;
+    width: 150px;
+    height:120px;
+}
+#listGuestsButton{
+    padding:0;
+    background:none;
+    border: none;
+    margin-right:15%;
+    width: 150px;
+    height:120px;
+}
+#countdownButton{
     padding:0;
     background:none;
     border: none;
@@ -118,15 +152,7 @@ body{
     height:120px;
 }
 
-#navigate2{
-    padding:0;
-    background:none;
-    border: none;
-    width: 150px;
-    height:120px;
-}
-
-#navigate:hover,#navigate2:hover{
+#planEventsButton:hover,#collaborateButton:hover,#countdownButton:hover,#listGuestsButton:hover{
     background-color: #f7f7f7;
 }
 

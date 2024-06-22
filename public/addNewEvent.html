@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Add New Event</title>
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <link rel="stylesheet" href="css/addNewEvent.css">
-    </head>
-    <body style="margin:0">
+<head>
+    <title>Add New Event</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/addNewEvent.css">
+</head>
+<body style="margin:0">
 
-        <div id="top">
-            <div id="homelogo">
-                <img src="css/logocropped.png" id="logo">
-                <div id ="button2">
-                    <a href="profile.html"><button type="button" id="b1">Profile</button></a>
-                </div>
-                <div id ="button1">
-                    <a href="events.html"><button type="button" id="b1">Events</button></a>
-                </div>
-            </div>
+<div id="top">
+    <div id="homelogo">
+        <img src="css/logocropped.png" id="logo">
+        <div id ="button2">
+            <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+        </div>
+        <div id ="button1">
+            <a href="events.html"><button type="button" id="b1">Events</button></a>
+        </div>
+    </div>
+</div>
+
+<div id="head">
+    <p id="header">ADD NEW EVENT</p>
+</div>
+<div id="navigate">
+    <a href="events.html"><button type="button" id="back">🡨 Back</button></a>
+</div>
+<div id="middle">
+    <form id="add_event_form">
+        <div class="form-group">
+            <label for="eventname">Event Name:</label>
+            <input type="text" id="eventname" name="eventname" placeholder="Event Name" required>
+        </div>
+        <div class="form-group">
+            <label for="eventdescription">Event Description:</label>
+            <input type="text" id="eventdescription" name="eventdescription" placeholder="Description">
+        </div>
+        <div class="form-group">
+            <label for="eventdate">Date:</label>
+            <input type="date" id="eventdate" name="eventdate" required>
+        </div>
+        <div class="form-group">
+            <label for="starttime">Start Time:</label>
+            <input type="time" id="starttime" name="starttime" placeholder="Start" required>
+        </div>
+        <div class="form-group">
+            <label for="endtime">End Time:</label>
+            <input type="time" id="endtime" name="endtime" placeholder="End" required>
+        </div>
+        <div class="form-group">
+            <label for="eventlocation">Location:</label>
+            <input type="text" id="eventlocation" name="eventlocation" placeholder="Location" required>
         </div>
 
-        
-            <div id="head">
-                <p id="header">ADD NEW EVENT</p>
-            </div>
-            <div id="navigate">
-                <a href="events.html"><button type="button" id="back">🡨 Back</button></a>
-            </div>
-            <div id="middle">
-            <form>
-                <div class="form-group">
-                    <label for="eventname" id="eventnamelabel">Event Name:</label>
-                    <input type="text" id="eventname" name="eventname" placeholder="Event Name"required>
-                </div>
-                <div class="form-group">
-                    <label for="eventdescription" id="eventdescriptionlabel">Event Description:</label>
-                    <input type="text" id="eventdescription" name="eventdescription" placeholder="Description">
-                </div>
-                <div class="form-group">
-                    <label for="date" id="datelabel">Date:</label>
-                    <input type="date" id="eventdate" name="eventdate"required>
-                </div>
-                <div class="form-group">
-                    <label for="starttime" id="starttimelabel">Start Time:</label>
-                    <input type="time" id="starttime" name="starttime" placeholder="Start"required>                 
-                </div>
-                <div class="form-group">
-                <label for="endtime" id="endtimelabel">End Time:</label>
-                <input type="time" id="endtime" name="endtime" placeholder="End"required>
-             </div>
-                    
-                <div class="form-group">
-                    <label for="eventlocation" id="eventlocationlabel">Location:</label>
-                    <input type="text" id="eventlocation" name="eventlocation" placeholder="Location"required>
-                </div>
+        <input type="submit" id="confirmbutton" value="Confirm">
+    </form>
+</div>
 
-                <input type="submit" id="confirmbutton" value="Confirm">
-            </form>
-        </div>
-    </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="add_events.js"></script> <!-- Include your JavaScript file -->
+
+</body>
 </html>

@@ -33,6 +33,7 @@ const Budget = require("./models/Budget");
 // Routing Initialization
 const todoRouter = require("./routes/todoRoute.js");
 const userRouter = require("./routes/userRoute.js");
+const addEventsRoute = require("./routes/addEventsRoute.js");
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -48,6 +49,7 @@ hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
 app.use("/", todoRouter); 
 app.use("/api/users", userRouter);
+app.use("/api/events", addEventsRoute);
 
 /* For file uploads */
 const fileUpload = require("express-fileupload");

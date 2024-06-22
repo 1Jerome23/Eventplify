@@ -15,12 +15,12 @@ document.getElementById('planEventsButton').addEventListener('click', function()
 
 // Collaborate button click event
 document.getElementById('collaborateButton').addEventListener('click', function() {
-    window.location.href = 'collaborate.html'; // Example: Change this to your collaborate page URL
+    window.location.href = 'collaborators.html'; // Example: Change this to your collaborate page URL
 });
 
 // List Guests button click event
 document.getElementById('listGuestsButton').addEventListener('click', function() {
-    window.location.href = 'list-guests.html'; // Example: Change this to your list guests page URL
+    window.location.href = 'guests.html'; // Example: Change this to your list guests page URL
 });
 
 // Countdown button click event
