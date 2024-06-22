@@ -41,6 +41,19 @@ app.use(session({
   saveUninitialized: false,
   cookie: { maxAge: 1800000  } // 30 minutes
 }));
+app.use(async function (req, res, next) {
+  if (req.session && req.session.userId) {
+      try {
+          req.user = await User.findById(req.session.userId);
+          next();
+      } catch (error) {
+          next(error);
+      }
+  } else {
+      next();
+  }
+});
+
 
 // Initializing handlebars
 var hbs = require("hbs");

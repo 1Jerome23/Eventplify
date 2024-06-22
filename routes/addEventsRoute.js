@@ -12,4 +12,15 @@ router.post('/add', async (req, res) => {
   }
 });
 
+// Route to fetch all events
+router.get('/events', async (req, res) => {
+    try {
+      const events = await getEvents(); // Assuming getEvents retrieves events from the database
+      res.status(200).json(events);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+
 module.exports = router;
