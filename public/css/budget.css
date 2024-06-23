@@ -1,22 +1,20 @@
 @font-face {
     font-family: 'League Spartan Bold';
     src: url(LeagueSpartan-Bold.ttf);
-  }
+}
 @font-face {
     font-family: 'League Spartan Regular';
     src: url(LeagueSpartan-Regular.ttf);
-  }
-
-  @font-face {
+}
+@font-face {
     font-family: 'Quicksand';
     src: url(Quicksand-Regular.ttf);
-  }
-  a{
+}
+a {
     text-decoration: none;
-} 
-body{
-    overflow-y: hidden;
-    overflow-x: hidden;
+}
+body {
+    overflow: hidden;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -24,31 +22,31 @@ body{
     right: 0;
 }
 
-#top{
+#top {
     margin: 0;
-    overflow:hidden;
+    overflow: hidden;
     background-color: #F1EFE7;
     max-height: 17%;
 }
 
-#middle{
-    height: 75%;
+#middle {
+    height: 35%;
     overflow-y: auto;
+    padding-bottom: 120px; /* Ensure there is space for the fixed elements */
 }
 
-#homelogo{
+#homelogo {
     margin-top: 30px;
     margin-left: 50px;
-    margin-bottom: 30px; 
-    
+    margin-bottom: 30px;
 }
-#logo{
+#logo {
     width: 200px;
     max-width: 100%;
     height: auto;
 }
 
-#button1{
+#button1 {
     float: right;
     margin-top: auto;
     margin-bottom: auto;
@@ -56,30 +54,30 @@ body{
     margin-left: 30px;
 }
 
-#button2{
+#button2 {
     float: right;
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 70px;
 }
 
-#b1{
+#b1 {
     padding: 0%;
     background: none;
     font-size: 30px;
     border: none;
     font-family: 'Quicksand';
 }
-#b1:hover{
+#b1:hover {
     text-decoration: underline;
 }
 
-#head{
+#head {
     border-bottom: 2px solid rgb(206, 206, 206);
     margin: auto;
     width: 96%;
 }
-#header{
+#header {
     text-align: center;
     font-size: 35px;
     font-family: 'League Spartan Bold';
@@ -87,30 +85,58 @@ body{
     margin-top: 10px;
 }
 
-#navigate{
+#navigate {
     overflow: hidden;
     padding: 5px 30px 5px 30px;
 }
 
-#event{
+#budget-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:275px;
+}
+
+#budget_amount {
+    font-family: 'Quicksand';
+    font-size: 25px;
+
+   
+}
+
+#editbudgetbutton {
+
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: 'Quicksand';
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    padding: 5px;
+    width: 10%;
+}
+
+#event {
     background: none;
     font-size: 20px;
     border: none;
     font-family: 'Quicksand';
 }
-#event:hover{
+#event:hover {
     text-decoration: underline;
 }
-#search{
+#search {
     font-size: 20px;
     font-family: 'Quicksand';
     border-radius: 10px;
     border: 2px solid black;
     padding-left: 5px;
     padding-right: 5px;
-    margin-left:320px;
+    margin-left: 320px;
 }
-#filterbutton{
+#filterbutton {
     margin-left: 10px;
     font-size: 20px;
     font-family: 'Quicksand';
@@ -118,14 +144,12 @@ body{
     border-radius: 10px;
     color: black;
     background-color: #F1EFE7;
-    font-size: 20px;
-    font-family: 'Quicksand';
     padding: 10px;
-    width:10%;
-    float:right;
+    width: 10%;
+    float: right;
 }
 
-#sortbutton{
+#sortbutton {
     margin-left: 10px;
     font-size: 20px;
     font-family: 'Quicksand';
@@ -133,22 +157,20 @@ body{
     border-radius: 10px;
     color: black;
     background-color: #F1EFE7;
-    font-size: 20px;
-    font-family: 'Quicksand';
     padding: 10px;
-    width:10%;
-    float:right;
+    width: 10%;
+    float: right;
 }
 
-
-#entries{
+#entries {
     overflow-y: auto;
-    height: 50vh;
+    height: 100%;
 }
-#entry{
+
+#entry {
     background-color: #F1EFE7;
     border-radius: 10px;
-    width:94%;
+    width: 94%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
@@ -156,105 +178,111 @@ body{
     overflow: hidden;
     position: relative;
 }
-#budgetname{
+
+#budgetname {
     font-size: 25px;
-    margin:0;
+    margin: 0;
     font-family: 'Quicksand';
 }
-#budgetcategory{
+
+#budgetcategory {
     font-size: 15px;
-    margin:0;
+    margin: 0;
     color: #BEB1B1;
     font-family: 'Quicksand';
 }
 
-#editbutton{
-    margin-top:0;
+#editbutton {
+    margin-top: 0;
     padding-top: 12px;
     background: none;
     border: none;
-    position:absolute;
-    right:10px;
-}    
-#editicon,#trashicon{
-    width:25px;
+    position: absolute;
+    right: 10px;
+}
+#editicon, #trashicon {
+    width: 25px;
 }
 
-#containeradd{
-    height: 7vh;
-    margin: 0;
+#containeradd {
+    position: fixed;
+    bottom: 12%;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
 }
-#addbutton{
+
+#addbutton {
     border: none;
     border-radius: 10px;
     color: black;
     background-color: #F1EFE7;
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
-    padding: 5px 15px 5px 15px;
-    margin: 0px 30px 10px 20px;
-    float: left;
-    display: inline-flex; 
+    padding: 5px 15px;
+    margin-left: 20px;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
-#footer{
-    position:absolute;
+#footer {
+    position: fixed;
     bottom: 0;
     background-color: #F3F2EF;
-    height:12%;
-    width:100%;
-    padding-left: auto;
-    padding-right: auto;
-    margin:0;
+    height: 12%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
-.footerbutton{
+.footerbutton {
     border: none;
     background: none;
-    padding: 15px 20px 15px 20px;
+    padding: 15px 20px;
     width: 11%;
     margin-right: 10%;
-    margin-left:0px;
+    margin-left: 0;
     flex-direction: column;
 }
-.footerbutton:hover, .footerbutton2:hover{
-    /*background-color: #eae8e1;*/
-    .btnlabel{
+.footerbutton:hover, .footerbutton2:hover {
+    .btnlabel {
         text-decoration: underline;
     }
 }
-.footerbutton2{
+.footerbutton2 {
     border: none;
     background: none;
-    padding: 15px 20px 15px 20px;
+    padding: 15px 20px;
     width: 11%;
-    margin-right: 0px;
+    margin-right: 0;
 }
 
-.btnicon{
-    width:30px;
+.btnicon {
+    width: 30px;
     height: 30px;
     object-fit: cover;
     margin-bottom: 0;
 }
-.btnlabel{
+.btnlabel {
     font-family: 'Quicksand';
     text-align: center;
     font-size: 15px;
     align-items: center;
 }
 
-#container{
-    width:70%;
-    margin-left: auto;
-    margin-right:auto;
+#container {
+    width: 70%;
+    margin: 0 auto;
 }
 
-.totals .total-spent,.totals .amount-left {
+.totals .total-spent, .totals .amount-left {
     text-align: right;
     font-size: 17px;
     font-family: 'Quicksand', sans-serif;
     margin-right: 20px;
+    
 }
