@@ -32,7 +32,7 @@ body {
 #middle {
     height: 35%;
     overflow-y: auto;
-    padding-bottom: 120px; /* Ensure there is space for the fixed elements */
+    padding-bottom: 120px; 
 }
 
 #homelogo {
@@ -70,6 +70,14 @@ body {
 }
 #b1:hover {
     text-decoration: underline;
+  }
+
+.footerbutton2 {
+  border: none;
+  background: none;
+  padding: 15px 20px 15px 20px;
+  width: 11%;
+  margin-right: 0px;
 }
 
 #head {

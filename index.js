@@ -2,16 +2,14 @@ const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 var express = require("express");
 var app = new express();
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config();
 const connectionString = process.env.DATABASE_URL;
-const session = require('express-session'); 
-
+const session = require("express-session");
 
 try {
   mongoose.connect(connectionString);
   console.log("Connected to MongoDB successfully");
-
 } catch (err) {
   console.error(err);
 }
@@ -34,42 +32,45 @@ const Budget = require("./models/Budget");
 const todoRouter = require("./routes/todoRoute.js");
 const userRouter = require("./routes/userRoute.js");
 const addEventsRoute = require("./routes/addEventsRoute.js");
+const budgetRouter = require("./routes/budgetRoute.js");
 
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 1800000  } // 30 minutes
-}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 1800000 }, // 30 minutes
+  })
+);
 app.use(async function (req, res, next) {
   if (req.session && req.session.userId) {
-      try {
-          req.user = await User.findById(req.session.userId);
-          next();
-      } catch (error) {
-          next(error);
-      }
-  } else {
+    try {
+      req.user = await User.findById(req.session.userId);
       next();
+    } catch (error) {
+      next(error);
+    }
+  } else {
+    next();
   }
 });
-
 
 // Initializing handlebars
 var hbs = require("hbs");
 app.set("view engine", "hbs");
 hbs.registerPartials(path.join(__dirname, "views", "partials"));
 
-app.use("/", todoRouter); 
+app.use("/", todoRouter);
 app.use("/api/users", userRouter);
 app.use("/api/events", addEventsRoute);
+app.use("/", budgetRouter);
 
 /* For file uploads */
 const fileUpload = require("express-fileupload");
 app.use(fileUpload()); //initialize file upload middleware
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'home_unlogged.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "home_unlogged.html"));
 });
 
 var server = app.listen(port, "0.0.0.0", function () {
