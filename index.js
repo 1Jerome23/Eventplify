@@ -56,7 +56,11 @@ app.use(async function (req, res, next) {
 });
 app.get('/events', async (req, res) => {
   try {
-    const events = await Event.find();
+    if (!req.session.userId) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    const events = await Event.find({ owner: req.session.userId });
     res.json(events);
   } catch (err) {
     console.error(err);

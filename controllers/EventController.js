@@ -31,3 +31,17 @@ exports.addEvent = async (req, res) => {
   }
 };
 
+exports.getEvents = async (req, res) => {
+  try {
+      if (!req.session.userId) {
+          return res.status(401).json({ error: 'Unauthorized' });
+      }
+
+      const events = await Event.find({ owner: req.session.userId });
+
+      return res.status(200).json(events);
+  } catch (error) {
+      console.error('Error fetching events:', error);
+      return res.status(500).json({ error: 'An error occurred while fetching events' });
+  }
+};
