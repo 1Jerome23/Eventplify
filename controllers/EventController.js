@@ -2,24 +2,42 @@
 
 const Event = require('../models/Event');
 
+// Function to generate a unique 5-digit code
+const generateUniqueCode = async () => {
+  let code;
+  let isUnique = false;
+
+  while (!isUnique) {
+    code = Math.floor(10000 + Math.random() * 90000).toString(); // Generate a random 5-digit number
+    const existingEvent = await Event.findOne({ code });
+
+    if (!existingEvent) {
+      isUnique = true; // Code is unique if no event with this code exists
+    }
+  }
+
+  return code;
+};
+
 exports.addEvent = async (req, res) => {
   try {
-
     if (!req.user || !req.user._id) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      
+      return res.status(401).json({ error: 'Unauthorized' });
     }
-    
+
     const { name, description, date, startTime, endTime, location } = req.body;
 
-    const newEvent = new Event({ 
+    const code = await generateUniqueCode(); // Generate the unique 5-digit code
+
+    const newEvent = new Event({
       owner: req.session.userId, // Assuming user ID is stored in req.session.userId
       name,
       description,
       date,
       startTime,
       endTime,
-      location 
+      location,
+      code // Add the unique code to the event
     });
 
     await newEvent.save();
@@ -33,15 +51,15 @@ exports.addEvent = async (req, res) => {
 
 exports.getEvents = async (req, res) => {
   try {
-      if (!req.session.userId) {
-          return res.status(401).json({ error: 'Unauthorized' });
-      }
+    if (!req.session.userId) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
 
-      const events = await Event.find({ owner: req.session.userId });
+    const events = await Event.find({ owner: req.session.userId });
 
-      return res.status(200).json(events);
+    return res.status(200).json(events);
   } catch (error) {
-      console.error('Error fetching events:', error);
-      return res.status(500).json({ error: 'An error occurred while fetching events' });
+    console.error('Error fetching events:', error);
+    return res.status(500).json({ error: 'An error occurred while fetching events' });
   }
 };
