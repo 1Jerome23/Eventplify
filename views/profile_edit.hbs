@@ -1,13 +1,14 @@
 <html>
 
 <head>
-    <title>Budget</title>
+    <title>Profile - Edit</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/budget.css">
+    <link rel="stylesheet" href="css/profile_edit.css">
 </head>
 
 <body style="margin:0">
+
     <div id="top">
         <div id="homelogo">
             <img src="css/logocropped.png" id="logo">
@@ -21,45 +22,29 @@
     </div>
 
     <div id="head">
-        <p id="header">BUDGET</p>
+        <p id="header">EDIT PROFILE</p>
     </div>
     <div id="navigate">
-        <button type="button" id="event">🡨 Sample Event</button>
-        <input type="search" id="search" placeholder="Search...">
-        <button type="button" id="filterbutton">Filter</button>
-        <button type="button" id="sortbutton">Sort</button>
-        <div id="budget-container">
-            <p id="budget_amount">BUDGET: P10,000</p>
-            <button type="button" id="editbudgetbutton">Edit</button>
-        </div>
+        <button type="button" id="back" onclick="goBack()">🡨 Back</button>
     </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
     <div id="middle">
-        <div id="entries">
-            {{#each budget}}
-            <div class="entry">
-                <button type="button" id="editbutton">
-                    <a href="/budgetEdit?id={{this._id}}"><img src="css/edit_icon.png" id="editicon"></a>
-                    <img src="css/trash_icon.png" class="trashicon" id="{{this._id}}">
-                </button> <!-- edit button to appear if collaborator=true-->
-                <p id="budgetname">{{this.name}} - ₱{{this.amount}}</p>
-                <p id="budgetcategory">{{this.category}}</p>
+        <form id="profile-edit-form" method="post" action="/submitProfileEdit">
+            <div class="form-group">
+                <label for="username" id="usernamelabel">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" value="{{user.username}}"
+                    required>
             </div>
-            {{/each}}
-            <!--extra entries to fill the space-->
-            <!--entries are scrollable-->
+            <input type="hidden" id="id" name="id" value="{{user._id}}">
+            <input type="submit" id="profile_editconfirmbutton" value="Confirm">
+        </form>
 
-            <!--end of extra entries-->
-        </div>
     </div>
-
-    <div id="containeradd">
-        <a href="/budgetAdd">
-            <button type="button" id="addbutton"><img src="css/plus_icon.png" class="btnicon">
-                Add Item</button></a>
-        <div class="totals"><!--calculate amount according to budget items-->
-            <div class="total-spent">TOTAL SPENT: ₱{{totalAmount}}</div>
-            <div class="amount-left">AMOUNT LEFT: ₱2,000.00</div>
-        </div>
     </div>
     <div id="footer">
         <div id="container">
@@ -96,7 +81,5 @@
         </div>
     </div>
 </body>
-
-<script src="budget_script.js"></script>
 
 </html>

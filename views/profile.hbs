@@ -1,13 +1,14 @@
 <html>
 
 <head>
-    <title>Budget</title>
+    <title>Profile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/budget.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body style="margin:0">
+
     <div id="top">
         <div id="homelogo">
             <img src="css/logocropped.png" id="logo">
@@ -20,46 +21,29 @@
         </div>
     </div>
 
-    <div id="head">
-        <p id="header">BUDGET</p>
-    </div>
-    <div id="navigate">
-        <button type="button" id="event">🡨 Sample Event</button>
-        <input type="search" id="search" placeholder="Search...">
-        <button type="button" id="filterbutton">Filter</button>
-        <button type="button" id="sortbutton">Sort</button>
-        <div id="budget-container">
-            <p id="budget_amount">BUDGET: P10,000</p>
-            <button type="button" id="editbudgetbutton">Edit</button>
-        </div>
-    </div>
     <div id="middle">
-        <div id="entries">
-            {{#each budget}}
-            <div class="entry">
-                <button type="button" id="editbutton">
-                    <a href="/budgetEdit?id={{this._id}}"><img src="css/edit_icon.png" id="editicon"></a>
-                    <img src="css/trash_icon.png" class="trashicon" id="{{this._id}}">
-                </button> <!-- edit button to appear if collaborator=true-->
-                <p id="budgetname">{{this.name}} - ₱{{this.amount}}</p>
-                <p id="budgetcategory">{{this.category}}</p>
-            </div>
-            {{/each}}
-            <!--extra entries to fill the space-->
-            <!--entries are scrollable-->
+        <div id="head">
+            <p id="header">PROFILE</p>
+        </div>
+        <div id="navigate">
 
-            <!--end of extra entries-->
+        </div>
+
+        <div class="info-section">
+            <p class="bold">Email</p>
+            <p class="regular">{{user.email}}</p>
+            <p class="bold">Username</p>
+            <p class="regular">{{user.username}}</p>
         </div>
     </div>
-
     <div id="containeradd">
-        <a href="/budgetAdd">
-            <button type="button" id="addbutton"><img src="css/plus_icon.png" class="btnicon">
-                Add Item</button></a>
-        <div class="totals"><!--calculate amount according to budget items-->
-            <div class="total-spent">TOTAL SPENT: ₱{{totalAmount}}</div>
-            <div class="amount-left">AMOUNT LEFT: ₱2,000.00</div>
-        </div>
+        <a href="login.html"><button type="button" id="logoutbutton">Log Out</button></a>
+        <a href="/profileChangePassword"><button type="button" id="changepasswordbutton">Change Password</button></a>
+        <a href="/profileEdit"><button type="button" id="profileeditbutton">Edit</button></a>
+
+
+
+    </div>
     </div>
     <div id="footer">
         <div id="container">
@@ -96,7 +80,5 @@
         </div>
     </div>
 </body>
-
-<script src="budget_script.js"></script>
 
 </html>

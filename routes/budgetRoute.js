@@ -6,8 +6,6 @@ const Event = require("../models/Event");
 const Budget = require("../models/Budget");
 const router = Router();
 const { format, parse } = require("date-fns");
-const mongoose = require("mongoose");
-const ObjectId = mongoose.Types.ObjectId;
 
 router.get("/budget", async (req, res) => {
   var event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created

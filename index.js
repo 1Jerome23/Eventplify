@@ -33,6 +33,7 @@ const todoRouter = require("./routes/todoRoute.js");
 const userRouter = require("./routes/userRoute.js");
 const addEventsRoute = require("./routes/addEventsRoute.js");
 const budgetRouter = require("./routes/budgetRoute.js");
+const profileRouter = require("./routes/profileRoute.js");
 
 app.use(
   session({
@@ -64,6 +65,7 @@ app.use("/", todoRouter);
 app.use("/api/users", userRouter);
 app.use("/api/events", addEventsRoute);
 app.use("/", budgetRouter);
+app.use("/", profileRouter);
 
 /* For file uploads */
 const fileUpload = require("express-fileupload");

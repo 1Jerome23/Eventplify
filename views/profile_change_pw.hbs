@@ -1,13 +1,14 @@
 <html>
 
 <head>
-    <title>Budget</title>
+    <title>Profile - Change Password</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/budget.css">
+    <link rel="stylesheet" href="css/editEvent.css">
 </head>
 
 <body style="margin:0">
+
     <div id="top">
         <div id="homelogo">
             <img src="css/logocropped.png" id="logo">
@@ -21,45 +22,41 @@
     </div>
 
     <div id="head">
-        <p id="header">BUDGET</p>
+        <p id="header">CHANGE PASSWORD</p>
     </div>
     <div id="navigate">
-        <button type="button" id="event">🡨 Sample Event</button>
-        <input type="search" id="search" placeholder="Search...">
-        <button type="button" id="filterbutton">Filter</button>
-        <button type="button" id="sortbutton">Sort</button>
-        <div id="budget-container">
-            <p id="budget_amount">BUDGET: P10,000</p>
-            <button type="button" id="editbudgetbutton">Edit</button>
-        </div>
+        <button type="button" id="back" onclick="goBack()">🡨 Back</button>
     </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
     <div id="middle">
-        <div id="entries">
-            {{#each budget}}
-            <div class="entry">
-                <button type="button" id="editbutton">
-                    <a href="/budgetEdit?id={{this._id}}"><img src="css/edit_icon.png" id="editicon"></a>
-                    <img src="css/trash_icon.png" class="trashicon" id="{{this._id}}">
-                </button> <!-- edit button to appear if collaborator=true-->
-                <p id="budgetname">{{this.name}} - ₱{{this.amount}}</p>
-                <p id="budgetcategory">{{this.category}}</p>
+        <form id="profile-pass-change-form" method="post" action="/submitChangePassword">
+            <!--Old values should be placeholder. Make sure old and new value shouldn't be the same-->
+            <div class="form-group">
+                <label for="oldpassword" id="oldpasswordlabel">Old Password:</label>
+                <input type="password" id="oldpassword" name="oldpassword" placeholder="Old Password" required>
             </div>
-            {{/each}}
-            <!--extra entries to fill the space-->
-            <!--entries are scrollable-->
+            <div class="form-group">
+                <label for="newpassword" id="newpasswordlabel">New Password:</label>
+                <input type="password" id="newpassword" name="newpassword" placeholder="New Password" required>
+            </div>
+            <div class="form-group">
+                <label for="reenternewpassword" id="reenternewpasswordlabel">New Password:</label>
+                <input type="password" id="reenternewpassword" name="reenternewpassword"
+                    placeholder="Re-Enter New Password" required>
+            </div>
+            {{#if errorMessage}}
+            <p style="color:red; text-align: center;">{{errorMessage}}</p>
+            {{/if}}
+            <input type="hidden" id="id" name="id" value="{{user._id}}">
+            <input type="submit" id="confirmbutton" value="Confirm">
+        </form>
 
-            <!--end of extra entries-->
-        </div>
     </div>
-
-    <div id="containeradd">
-        <a href="/budgetAdd">
-            <button type="button" id="addbutton"><img src="css/plus_icon.png" class="btnicon">
-                Add Item</button></a>
-        <div class="totals"><!--calculate amount according to budget items-->
-            <div class="total-spent">TOTAL SPENT: ₱{{totalAmount}}</div>
-            <div class="amount-left">AMOUNT LEFT: ₱2,000.00</div>
-        </div>
     </div>
     <div id="footer">
         <div id="container">
@@ -96,7 +93,5 @@
         </div>
     </div>
 </body>
-
-<script src="budget_script.js"></script>
 
 </html>
