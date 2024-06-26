@@ -1,6 +1,7 @@
 // controllers/eventController.js
 
 const Event = require('../models/Event');
+const User = require('../models/User'); // Ensure this line is at the top of the file
 
 // Function to generate a unique 5-digit code
 const generateUniqueCode = async () => {
@@ -70,20 +71,31 @@ exports.joinEvent = async (req, res) => {
     const { name, code } = req.body;
 
     if (!name || !code) {
-      console.error('Validation Error: Name and code are required');
       return res.status(400).json({ error: 'Name and code are required' });
     }
 
     const event = await Event.findOne({ code });
 
     if (!event) {
-      console.error('Event not found with code:', code);
       return res.status(404).json({ error: 'Event not found' });
     }
 
-    event.participants.push({ name });
+    const user = await User.findById(req.session.userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
 
-    await event.save();
+    // Check if the user is already a participant
+    const isParticipant = event.participants.some(participant => participant.userId.equals(user._id));
+    if (!isParticipant) {
+      event.participants.push({ userId: user._id, name });
+      await event.save();
+    }
+
+    if (!user.joinedEvents.includes(event._id)) {
+      user.joinedEvents.push(event._id);
+      await user.save();
+    }
 
     return res.status(200).json({ message: 'Joined event successfully', event });
   } catch (error) {

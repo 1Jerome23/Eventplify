@@ -61,7 +61,18 @@ app.get('/events', async (req, res) => {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
-    const events = await Event.find({ owner: req.session.userId });
+    const user = await User.findById(req.session.userId).populate('joinedEvents');
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const events = await Event.find({
+      $or: [
+        { owner: req.session.userId },
+        { _id: { $in: user.joinedEvents } }
+      ]
+    });
+
     res.json(events);
   } catch (err) {
     console.error(err);
