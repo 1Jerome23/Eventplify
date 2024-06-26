@@ -30,14 +30,15 @@ exports.addEvent = async (req, res) => {
     const code = await generateUniqueCode(); // Generate the unique 5-digit code
 
     const newEvent = new Event({
-      owner: req.session.userId, // Assuming user ID is stored in req.session.userId
+      owner: req.session.userId, 
       name,
       description,
       date,
       startTime,
       endTime,
       location,
-      code // Add the unique code to the event
+      code,
+      participants: []
     });
 
     await newEvent.save();
@@ -61,5 +62,32 @@ exports.getEvents = async (req, res) => {
   } catch (error) {
     console.error('Error fetching events:', error);
     return res.status(500).json({ error: 'An error occurred while fetching events' });
+  }
+};
+
+exports.joinEvent = async (req, res) => {
+  try {
+    const { name, code } = req.body;
+
+    if (!name || !code) {
+      console.error('Validation Error: Name and code are required');
+      return res.status(400).json({ error: 'Name and code are required' });
+    }
+
+    const event = await Event.findOne({ code });
+
+    if (!event) {
+      console.error('Event not found with code:', code);
+      return res.status(404).json({ error: 'Event not found' });
+    }
+
+    event.participants.push({ name });
+
+    await event.save();
+
+    return res.status(200).json({ message: 'Joined event successfully', event });
+  } catch (error) {
+    console.error('Error joining event:', error);
+    return res.status(500).json({ error: 'An error occurred while joining the event. Please try again.' });
   }
 };
