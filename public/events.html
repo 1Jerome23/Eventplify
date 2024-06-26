@@ -56,12 +56,12 @@
                 const events = await response.json();
                 const entriesDiv = document.getElementById('entries');
                 entriesDiv.innerHTML = ''; 
-
+    
                 events.forEach(event => {
                     const entryDiv = document.createElement('div');
                     entryDiv.classList.add('entry');
                     entryDiv.innerHTML = `
-                        <h3>${event.name}</h3>
+                        <h3><a href="events_page_detailed.html?eventId=${event._id}" class="event-link">${event.name}</a></h3>
                         <p><strong>Date:</strong> ${event.date}</p>
                         <p><strong>Time:</strong> ${event.startTime} - ${event.endTime}</p>
                         <p><strong>Location:</strong> ${event.location}</p>
@@ -74,9 +74,9 @@
                 console.error('Error fetching events:', error);
             }
         }
-
+    
         document.addEventListener('DOMContentLoaded', fetchAndDisplayEvents);
-        
     </script>
+      
 </body>
 </html>

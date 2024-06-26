@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Event = require('../models/Event');
 const { addEvent, joinEvent  } = require('../controllers/EventController'); // Assuming addEvent function is defined in eventController
 
 // Route to add a new event
@@ -37,4 +38,21 @@ router.post('/join', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+router.get('/:eventId', async (req, res) => {
+  try {
+    const eventId = req.params.eventId;
+    const event = await Event.findById(eventId);
+
+    if (!event) {
+      return res.status(404).json({ error: 'Event not found' });
+    }
+
+    res.json(event);
+  } catch (error) {
+    console.error('Error fetching event details:', error);
+    res.status(500).json({ error: 'An error occurred while fetching the event details.' });
+  }
+});
+
 module.exports = router;
