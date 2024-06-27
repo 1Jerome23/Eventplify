@@ -26,9 +26,14 @@
             <p id="header">ADD TASK</p>
         </div>
         <div id="navigate">
-            <a href="todo.html"><button type="button" id="back">🡨 Back</button></a>
-
+            <button type="button" id="back" onclick="goBack()">🡨 Back</button>
         </div>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
         <form id="todo-add-form" method="post" action="/todoSubmit">
             <div class="form-group">
                 <label for="taskname" id="tasknamelabel">Task Name:</label>
@@ -45,6 +50,7 @@
                     <option value="checked">Completed</option>
                 </select>
             </div>
+            <input type="hidden" id="event" name="event" value="{{event}}">
             <input type="submit" id="confirmbutton" value="Confirm">
         </form>
 

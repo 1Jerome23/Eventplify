@@ -8,7 +8,8 @@ const router = Router();
 const { format, parse } = require("date-fns");
 
 router.get("/todo", async (req, res) => {
-  var event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+  var event = "667bd17dbf98e4a49621ddef"; // Can be modified if the base events module is created
+  //var event = req.query.id;
   var todo = await Todo.find({ event: event }).sort({ date: 1 });
 
   todo.forEach((todo) => {
@@ -32,11 +33,13 @@ router.get("/todo", async (req, res) => {
   console.log(groupedTodos);
   res.render("todo", {
     todosArray,
+    event,
   });
 });
 
 router.get("/addtodo", async (req, res) => {
-  res.render("todo_add");
+  var event = req.query.id;
+  res.render("todo_add", { event });
 });
 
 function groupTodosByDate(todos) {

@@ -1,11 +1,13 @@
 const Todo = require("../models/Todo");
 
 exports.addTodo = async (req, res) => {
-  //const { taskname, taskdate, taskstatus } = req.body;
   const taskname = req.body.taskname;
   const taskdate = req.body.taskdate;
   const taskstatus = req.body.taskstatus;
-  const event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+  const event = req.body.event;
+  //const event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+
+  console.log("event ID: " + event);
 
   const newTodo = new Todo({
     event: event,
@@ -16,7 +18,7 @@ exports.addTodo = async (req, res) => {
 
   try {
     await newTodo.save();
-    res.redirect("/todo");
+    res.redirect("/todo?id=" + event);
   } catch (error) {
     console.error("Error saving todo:", error);
     res.status(500).send("Internal Server Error");

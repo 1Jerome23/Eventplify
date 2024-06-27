@@ -2,7 +2,7 @@ const Budget = require("../models/Budget");
 const Event = require("../models/Event");
 
 exports.addBudget = async (req, res) => {
-  const event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+  const event = req.body.event;
   const itemname = req.body.itemname;
   const itemamount = req.body.itemamount;
   const itemcategory = req.body.itemcategory;
@@ -16,7 +16,7 @@ exports.addBudget = async (req, res) => {
 
   try {
     await newBudget.save();
-    res.redirect("/budget");
+    res.redirect("/budget?id=" + event);
   } catch (error) {
     console.error("Error saving budget:", error);
     res.status(500).send("Internal Server Error");
@@ -25,6 +25,7 @@ exports.addBudget = async (req, res) => {
 };
 
 exports.editBudget = async (req, res) => {
+  const event = req.body.event;
   const itemid = req.body.itemid;
   const itemname = req.body.itemname;
   const itemamount = req.body.itemamount;
@@ -39,7 +40,7 @@ exports.editBudget = async (req, res) => {
   try {
     const result = await Budget.updateOne({ _id: itemid }, updatedData);
     console.log("Update Result:", result);
-    res.redirect("/budget");
+    res.redirect("/budget?id=" + event);
     //res.json({ message: "Todo status updated successfully", todo });
   } catch (error) {
     console.error("Error updating todo:", error);
