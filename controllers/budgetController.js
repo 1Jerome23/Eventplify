@@ -1,4 +1,5 @@
 const Budget = require("../models/Budget");
+const Event = require("../models/Event");
 
 exports.addBudget = async (req, res) => {
   const event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
@@ -62,5 +63,24 @@ exports.deleteBudget = async (req, res) => {
   } catch (error) {
     console.error("Error deleting todo:", error);
     res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+exports.editBudgetLimit = async (req, res) => {
+  const eventID = req.body.event;
+  const itemamount = req.body.itemamount;
+
+  updatedData = {
+    budget: itemamount,
+  };
+
+  try {
+    const result = await Event.updateOne({ _id: eventID }, updatedData);
+    console.log("Update Result:", result);
+    res.redirect("/budget?id=" + eventID);
+    //res.json({ message: "Todo status updated successfully", todo });
+  } catch (error) {
+    console.error("Error updating todo:", error);
+    res.status(500).send("Internal Server Error");
   }
 };

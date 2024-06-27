@@ -29,9 +29,15 @@
         <button type="button" id="filterbutton">Filter</button>
         <button type="button" id="sortbutton">Sort</button>
         <div id="budget-container">
-            <p id="budget_amount">BUDGET: P10,000</p>
-            <button type="button" id="editbudgetbutton">Edit</button>
+            <p id="budget_amount">BUDGET: ₱{{budgetLimit}}</p>
+            <button type="button" id="editbudgetbutton" class="{{event._id}}" onclick="sendToEditBudget()">Edit</button>
         </div>
+        <script>
+            function sendToEditBudget() {
+                var btn = document.getElementById("editbudgetbutton");
+                window.location.href = '/setBudgetLimit?id=' + btn.className;
+            }
+        </script>
     </div>
     <div id="middle">
         <div id="entries">
@@ -58,7 +64,7 @@
                 Add Item</button></a>
         <div class="totals"><!--calculate amount according to budget items-->
             <div class="total-spent">TOTAL SPENT: ₱{{totalAmount}}</div>
-            <div class="amount-left">AMOUNT LEFT: ₱2,000.00</div>
+            <div class="amount-left">AMOUNT LEFT: ₱{{amountLeft}}</div>
         </div>
     </div>
     <div id="footer">

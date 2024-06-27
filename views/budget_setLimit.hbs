@@ -22,7 +22,7 @@
     </div>
 
     <div id="head">
-        <p id="header">EDIT ITEM</p>
+        <p id="header">SET BUDGET LIMIT</p>
     </div>
     <div id="navigate">
         <button type="button" id="back" onclick="goBack()">🡨 Back</button>
@@ -35,21 +35,12 @@
     </script>
 
     <div id="middle">
-        <form id="budget-edit-form" method="post" action="/submitBudgetEdit">
-            <div class="form-group">
-                <label for="itemname" id="itemnamelabel">Item Name:</label>
-                <input type="text" id="itemname" name="itemname" placeholder="Item Name" value="{{budget.name}}">
-            </div>
+        <form id="budget-edit-form" method="post" action="/submitBudgetLimit">
             <div class="form-group">
                 <label for="itemamount" id="itemamountlabel">Amount:</label>
-                <input type="number" id="itemamount" name="itemamount" placeholder="Amount" value="{{budget.amount}}">
+                <input type="number" id="itemamount" name="itemamount" placeholder="Amount" value="{{event.budget}}">
             </div>
-            <div class="form-group">
-                <label for="itemcategory" id="itemcategorylabel">Category:</label>
-                <input type="text" id="itemcategory" name="itemcategory" placeholder="Category"
-                    value="{{budget.category}}">
-            </div>
-            <input type="hidden" id="itemid" name="itemid" value="{{budget._id}}">
+            <input type="hidden" id="event" name="event" value="{{event._id}}">
 
             <input type="submit" id="confirmbutton" value="Confirm">
         </form>

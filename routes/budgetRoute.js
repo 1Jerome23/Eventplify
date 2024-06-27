@@ -8,14 +8,18 @@ const router = Router();
 const { format, parse } = require("date-fns");
 
 router.get("/budget", async (req, res) => {
-  var event = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
-  var budget = await Budget.find({ event: event });
+  var eventID = "667bd17dbf98e4a49621ddef"; // Can be modified if the base events module is created
+  var budget = await Budget.find({ event: eventID });
+  var event = await Event.findById(eventID);
+  var budgetLimit = event.budget;
 
   var totalAmount = 0;
 
   budget.forEach((budget) => {
     totalAmount += budget.amount;
   });
+
+  var amountLeft = event.budget - totalAmount;
 
   var formattedNumber = totalAmount.toLocaleString("en-US", {
     minimumFractionDigits: 2,
@@ -24,7 +28,21 @@ router.get("/budget", async (req, res) => {
 
   totalAmount = formattedNumber;
 
-  res.render("budget", { budget, totalAmount });
+  formattedNumber = amountLeft.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  amountLeft = formattedNumber;
+
+  formattedNumber = budgetLimit.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  budgetLimit = formattedNumber;
+
+  res.render("budget", { budget, totalAmount, event, amountLeft, budgetLimit });
 });
 
 router.get("/budgetAdd", async (req, res) => {
@@ -38,8 +56,17 @@ router.get("/budgetEdit", async (req, res) => {
   res.render("budget_edit", { budget });
 });
 
+router.get("/setBudgetLimit", async (req, res) => {
+  const id = req.query.id;
+
+  var event = await Event.findById(id);
+  console.log(event);
+  res.render("budget_setLimit", { event });
+});
+
 router.post("/submitBudgetAdd", budgetController.addBudget);
 router.post("/submitBudgetEdit", budgetController.editBudget);
+router.post("/submitBudgetLimit", budgetController.editBudgetLimit);
 router.delete("/deleteBudget/:id", budgetController.deleteBudget);
 
 module.exports = router;
