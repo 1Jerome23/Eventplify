@@ -6,6 +6,7 @@ const TableSchema = new mongoose.Schema({
     ref: "Event",
   },
   name: String,
+  isSaved: Boolean,
 });
 
 const Table = mongoose.model("Table", TableSchema);

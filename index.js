@@ -34,6 +34,7 @@ const userRouter = require("./routes/userRoute.js");
 const addEventsRoute = require("./routes/addEventsRoute.js");
 const budgetRouter = require("./routes/budgetRoute.js");
 const profileRouter = require("./routes/profileRoute.js");
+const tableRouter = require("./routes/tableRoute.js");
 
 app.use(
   session({
@@ -55,17 +56,17 @@ app.use(async function (req, res, next) {
     next();
   }
 });
-app.get('/events', async (req, res) => {
+app.get("/events", async (req, res) => {
   try {
     if (!req.session.userId) {
-      return res.status(401).json({ error: 'Unauthorized' });
+      return res.status(401).json({ error: "Unauthorized" });
     }
 
     const events = await Event.find({ owner: req.session.userId });
     res.json(events);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server Error' });
+    res.status(500).json({ message: "Server Error" });
   }
 });
 
@@ -79,6 +80,7 @@ app.use("/api/users", userRouter);
 app.use("/api/events", addEventsRoute);
 app.use("/", budgetRouter);
 app.use("/", profileRouter);
+app.use("/", tableRouter);
 
 /* For file uploads */
 const fileUpload = require("express-fileupload");

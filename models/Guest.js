@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const GuestSchema = new mongoose.Schema({
-  event: {
+  table: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Table",
   },

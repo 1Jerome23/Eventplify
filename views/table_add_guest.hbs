@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Guest To Table</title>
+    <link rel="stylesheet" href="css/addGuestToTable.css">
+</head>
+
+<body style="margin:0">
+
+    <div id="top">
+        <div id="homelogo">
+            <img src="css/logocropped.png" id="logo">
+            <div id="button2">
+                <a href="profile.html"><button type="button" id="b1">Profile</button></a>
+            </div>
+            <div id="button1">
+                <a href="events.html"><button type="button" id="b1">Events</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="middle">
+        <div id="head">
+            <p id="header">ADD GUEST TO TABLE</p>
+        </div>
+        <div id="navigate">
+            <a href="/{{flag}}Table?event={{event}}"><button type="button" id="back">🡨 Back</button></a>
+        </div>
+        <div id="content-container">
+            <form method="post" action="/addGuestTableSubmit">
+                <div class="form-group">
+                    <label for="tablename" id="tablenamelabel">Add Guest:</label>
+                    <select id="guestlistdropdown" name="guestlistdropdown">
+                        {{#each guests}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <input type="hidden" id="tableID" name="tableID" value="{{table._id}}">
+                <input type="hidden" id="flag" name="flag" value="{{flag}}">
+                <input type="hidden" id="event" name="event" value="{{event}}">
+                <input type="submit" id="editTableconfirmbutton" value="Confirm">
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <a href="collaborators.html"><button type="button" class="footerbutton" id="collaborators">
+                <img src="css/collaborators_icon_black.png" class="btnicon">
+                <p class="btnlabel">Collaborators</p>
+            </button> </a>
+        <a href="guests.html"><button type="button" class="footerbutton" id="guestlist">
+                <img src="css/guest_icon_black.png" class="btnicon">
+                <p class="btnlabel">Guest List</p>
+            </button> </a>
+        <a href="todo.html"><button type="button" class="footerbutton" id="todo">
+                <img src="css/todo_icon_black.png" class="btnicon">
+                <p class="btnlabel">To-Do</p>
+            </button> </a>
+        <a href="budget.html"><button type="button" class="footerbutton" id="budget">
+                <img src="css/budget_icon_black.png" class="btnicon">
+                <p class="btnlabel">Budget</p>
+            </button> </a>
+        <a href="chat.html"><button type="button" class="footerbutton" id="chat">
+                <img src="css/chat_icon_black.png" class="btnicon">
+                <p class="btnlabel">Chat</p>
+            </button> </a>
+    </div>
+</body>
+<script>
+    window.addEventListener('popstate', function (event) {
+        // Your code here
+        console.log('The back button was pressed or history changed.');
+
+        // You can access the state object associated with the new history entry
+        console.log(event.state);
+    });
+</script>
+
+</html>
