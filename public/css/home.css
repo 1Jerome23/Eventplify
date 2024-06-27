@@ -1,165 +1,132 @@
 @font-face {
     font-family: 'League Spartan Bold';
     src: url(LeagueSpartan-Bold.ttf);
-  }
+}
 @font-face {
     font-family: 'League Spartan Regular';
     src: url(LeagueSpartan-Regular.ttf);
-  }
-
-  @font-face {
+}
+@font-face {
     font-family: 'Quicksand';
     src: url(Quicksand-Regular.ttf);
-  }
+}
 
-
-body{
+body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
 
-#top{
+#top {
     margin: 0;
-    overflow:hidden;
+    overflow: hidden;
     max-height: 17%;
 }
 
-#middle{
+#middle {
     background-color: #F1EFE7;
     margin-left: 4%;
     margin-right: 4%;
     padding: 2%;
-    overflow:auto;
-    height:52%
+    overflow: auto;
+    height: 52%;
 }
 
-
-#bottom{
+#bottom {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     padding-top: 2%;
-    overflow:hidden;
     margin-left: auto;
     margin-right: auto;
     width: 65%;
 }
 
-#homelogo{
+#homelogo {
     margin-top: 30px;
     margin-left: 50px;
-    margin-bottom: 30px; 
-    
+    margin-bottom: 30px;
 }
-#logo{
+
+#logo {
     width: 230px;
     max-width: 100%;
     height: auto;
 }
 
-#button1{
+#button1 {
     float: right;
     margin-top: 20px;
     margin-right: 50px;
     margin-left: 30px;
 }
 
-#button2{
+#button2 {
     float: right;
     margin-top: 20px;
     margin-right: 70px;
 }
 
-#eventsButton{
-    padding: 0%;
+#profileButton,#eventsButton {
+    padding: 0;
     background: none;
     font-size: 30px;
     border: none;
     font-family: 'Quicksand';
 }
-#eventsButton:hover{
-    text-decoration: underline;
-}
-#profileButton{
-    padding: 0%;
-    background: none;
-    font-size: 30px;
-    border: none;
-    font-family: 'Quicksand';
-}
-#profileButton:hover{
+#profileButton:hover ,#eventsButton:hover {
     text-decoration: underline;
 }
 
-#cake{
-    width:13%;
-    max-width: 100%;
-    height: auto;
-    float:left;
-    margin-left: 50px;
-}
-#sky{
+#cake {
     width: 13%;
     max-width: 100%;
     height: auto;
-    margin-top: 70px ;
+    float: left;
+    margin-left: 50px;
+}
+#sky {
+    width: 13%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 70px;
     padding-left: 20px;
 }
-#maintext{
-    float:right;
+#maintext {
+    float: right;
     margin-right: 15%;
 }
-#mainbig{
-    font-size:65px;
+#mainbig {
+    font-size: 65px;
     font-family: 'League Spartan Bold';
     font-weight: bold;
     text-align: center;
 }
-#mainsmall{
+#mainsmall {
     text-align: center;
     font-family: 'Quicksand';
     font-size: 20px;
 }
 
-#planEventsButton{
-    padding:0;
-    background:none;
+.navigate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
     border: none;
-    margin-right:15%;
     width: 150px;
-    height:120px;
-}
-#collaborateButton{
-    padding:0;
-    background:none;
-    border: none;
-    margin-right:15%;
-    width: 150px;
-    height:120px;
-}
-#listGuestsButton{
-    padding:0;
-    background:none;
-    border: none;
-    margin-right:15%;
-    width: 150px;
-    height:120px;
-}
-#countdownButton{
-    padding:0;
-    background:none;
-    border: none;
-    margin-right:15%;
-    width: 150px;
-    height:120px;
+    height: 120px;
+    text-align: center;
 }
 
-#planEventsButton:hover,#collaborateButton:hover,#countdownButton:hover,#listGuestsButton:hover{
-    background-color: #f7f7f7;
-}
-
-
-#plan{
+.plan {
     width: 50px;
 }
-#btntext{
+
+.btntext {
     font-family: 'Quicksand';
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

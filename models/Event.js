@@ -12,6 +12,8 @@ const EventSchema = new mongoose.Schema({
   endTime: String,
   location: String,
   budget: Number,
+  code: Number,
+  participants: [{ name: String }],
 });
 
 const Event = mongoose.model("Event", EventSchema);

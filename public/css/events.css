@@ -228,3 +228,11 @@ body {
         max-height: 250px;
     }
 }
+.event-link {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.event-link:hover {
+    color: #666; /* Light color on hover */
+}

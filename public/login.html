@@ -1,19 +1,26 @@
 <html>
     <title>Login</title>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="css/login.css">
         <body style = "margin:0">
             <div id="left_sidebar">
                 <img src="css/logo.png" id="logo">
             </div>
+        <div id="main_content">
         <h1 id="header">LOG IN</h1>
         <form id="login_form" action="/api/users/login" method = "POST">
             <input type="email" id="email" name="email" placeholder="Email"required><br>
             <input type="password" id="password" name="password" placeholder="Password"required><br>
             <a href="forgotpassword1.html" id="forgot_password">Forgot Password?</a><br>
-            <a href="#"></a><img src="css/facebook_button.png" id="facebooklogin"></a><br>
+            
             <input type="submit" id="login" value="Log In">
         </form>
+        <div id="social_login">
+            <a href="#"><center><img src="css/facebook_button.png" id="facebooklogin" alt="Facebook Login"></center></a>
+        </div>
         <p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
         </body>
 
         <script src="javascript/user.js"></script>
