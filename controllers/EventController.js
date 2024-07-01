@@ -7,9 +7,14 @@ const User = require('../models/User'); // Ensure this line is at the top of the
 const generateUniqueCode = async () => {
   let code;
   let isUnique = false;
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
   while (!isUnique) {
-    code = Math.floor(10000 + Math.random() * 90000).toString(); // Generate a random 5-digit number
+    code = '';
+    for (let i = 0; i < 8; i++) {
+      code += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+
     const existingEvent = await Event.findOne({ code });
 
     if (!existingEvent) {
@@ -19,7 +24,6 @@ const generateUniqueCode = async () => {
 
   return code;
 };
-
 exports.addEvent = async (req, res) => {
   try {
     if (!req.user || !req.user._id) {
