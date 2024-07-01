@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'League Spartan Bold';
+    src: url(LeagueSpartan-Bold.ttf);
+  }
+@font-face {
+    font-family: 'League Spartan Regular';
+    src: url(LeagueSpartan-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Quicksand';
+    src: url(Quicksand-Regular.ttf);
+  }
+
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#top{
+    margin: 0;
+    overflow:hidden;
+    background-color: #F1EFE7;
+    max-height: 17%;
+}
+
+#middle{
+    height: 71%;
+    overflow-y: auto;
+}
+
+#homelogo{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px; 
+    
+}
+#logo{
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+}
+
+#button1{
+    float: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+#button2{
+    float: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 70px;
+}
+
+#b1{
+    padding: 0%;
+    background: none;
+    font-size: 30px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#b1:hover{
+    text-decoration: underline;
+}
+
+#head{
+    border-bottom: 2px solid rgb(206, 206, 206);
+    margin: auto;
+    width: 96%;
+}
+#header{
+    text-align: center;
+    font-size: 35px;
+    font-family: 'League Spartan Bold';
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#navigate{
+    overflow: hidden;
+    padding: 5px 30px 5px 30px;
+}
+
+#backbtn{
+    background: none;
+    font-size: 20px;
+    border: none;
+    font-family: 'Quicksand';
+}
+#backbtn:hover{
+    text-decoration: underline;
+}
+#content{
+    overflow-y: auto;
+    height: 50vh;
+}
+#form{
+    margin-left:7%;
+    margin-right: 5%;
+}
+.formfont{
+    font-family: 'Quicksand';
+    font-size: 20px;
+}
+
+#formcontainer{
+    margin-left: 5%;
+    margin-bottom: 3%;
+}
+
+input, label{
+    margin-bottom: 1%;
+}
+
+#containerbtn{
+    height: 7vh;
+    margin: 0;
+}
+#confirmbutton{
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: #F1EFE7;
+    font-size: 20px;
+    font-family: 'Quicksand';
+    padding: 5px 15px 5px 15px;
+    margin: 10px 30px 10px 20px;
+    float: right;
+}
+
+#footer{
+    position:absolute;
+    bottom: 0;
+    background-color: #F3F2EF;
+    height:12%;
+    width:100%;
+    padding-left: auto;
+    padding-right: auto;
+    margin:0;
+}
+
+.footerbutton{
+    border: none;
+    background: none;
+    padding: 15px 20px 15px 20px;
+    width: 11%;
+    margin-right: 10%;
+    margin-left:0px;
+    flex-direction: column;
+}
+.footerbutton:hover, .footerbutton2:hover{
+    /*background-color: #eae8e1;*/
+    .btnlabel{
+        text-decoration: underline;
+    }
+}
+.footerbutton2{
+    border: none;
+    background: none;
+    padding: 15px 20px 15px 20px;
+    width: 11%;
+    margin-right: 0px;
+}
+
+.btnicon{
+    width:30px;
+    height: 30px;
+    object-fit: cover;
+    margin-bottom: 0;
+}
+.btnlabel{
+    font-family: 'Quicksand';
+    text-align: center;
+    font-size: 15px;
+    align-items: center;
+}
+
+#container{
+    width:70%;
+    margin-left: auto;
+    margin-right:auto;
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 50%;
+    max-width: 200px;
+    margin-right:100px;
+    padding-left:10px;
+    cursor: pointer;
+  }
+  
+  /* Style for dropdown arrow */
+  select::after {
+    content: '\25BC'; /* Unicode character for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  /* Style for dropdown options */
+  select option {
+    background-color: #fff;
+    color: #333;
+  }

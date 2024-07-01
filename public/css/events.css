@@ -322,3 +322,36 @@ body {
 .delete-button:hover {
     background-color: #c82333; /* Darker red on hover */
 }
+#footer{
+    position:absolute;
+    bottom: 0;
+    background-color: #F3F2EF;
+    height:12%;
+    width:100%;
+    padding-left: auto;
+    padding-right: auto;
+    margin:0;
+}
+
+.footerbutton{
+    border: none;
+    background: none;
+    padding: 15px 20px 15px 20px;
+    width: 11%;
+    margin-right: 10%;
+    margin-left:0px;
+    flex-direction: column;
+}
+.footerbutton:hover, .footerbutton2:hover{
+    /*background-color: #eae8e1;*/
+    .btnlabel{
+        text-decoration: underline;
+    }
+}
+.footerbutton2{
+    border: none;
+    background: none;
+    padding: 15px 20px 15px 20px;
+    width: 11%;
+    margin-right: 0px;
+}
