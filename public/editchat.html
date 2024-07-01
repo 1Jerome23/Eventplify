@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>Chat</title>    
+        <title>Edit Chat</title>    
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/createchat1.css">
     </head>
     <body style="margin:0">
 
@@ -21,32 +21,42 @@
 
         <div id="middle">
             <div id="head">
-                <p id="header">CHAT</p>
+                <p id="header">EDIT CHAT</p>
             </div>
             <div id="navigate">
-                <a href="events_page_detailed.html"><button type="button" id="event">🡨 Sample Event</button></a>
-                <input type="search" id="search"placeholder="Search...">
+                <a href="chat.html"><button type="button" id="event">🡨 Chat</button></a>
             </div>
-            <div id="entries">
-                <div id="entry">
-                    <a href="editchat.html"> <button type="button" id="editbutton">
-                        <img src="css/edit_icon.png" id="editicon">
-                    </button></a>
-                    <button type="button" id="trashbutton">
-                        <img src="css/trash_icon.png" id="trashicon">
-                    </button>
-                    <a href="chat_message.html"><p id= "name">Chat Name</p></a>
-                    <p id="message">User123: Hello There!</p>
+            <form id="form">
+            <div id="content">
+                <div id="formcontainer">
+                    <div class="form-group">
+                    <label for="chatname" id="clabel">Chat Name:</label> <!--placeholder of old chat name-->
+                    <input type="text" id="chatname"></div>
+                </br>
+               
+
+<!-- user can select multiple options-->
+<!-- old/current members should already be selected, and user can remove/add new members-->
+                <div class="form-group">
+                <label for="members" id="rlabel">Members: </label>
+                <select name="members" id="members" multiple>
+                            <option value="1">Person 1 </option>
+                            <option value="2">Person 2 </option>                 
+                            <option value="3">Person 3</option>
+                            <option value="4">Person 4</option> 
+                            <option value="5">Person 5</option> 
+                            <option value="6">Person 6</option> 
+                        
+                </select>
+            </div>
+            </div>
+                    </br>
                 </div>
-            <!--extra entries to fill the space-->
-                <!--entries are scrollable-->
-            <!--end of extra entries-->
             </div>
-            <div id="containeradd">
-                
-                <a href="createchat1.html"><button type="button" id="addbutton"><img src="css/plus_icon.png" class="btnicon">
-                    Create New Chat</button></a>
+            <div id="containeradd">    
+                <button type="button" id="createbutton">Edit</button>
             </div>
+        </form>
         </div>
         <div id="footer">
             <div id="container">

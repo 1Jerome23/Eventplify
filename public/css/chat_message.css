@@ -316,3 +316,13 @@ body{
 #send-button:hover {
     background-color: #e0e0e0;
 }
+
+.message .name {
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-family: 'Quicksand';
+}
+
+.message.received .name {
+    color: #333;
+}
