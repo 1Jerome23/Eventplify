@@ -236,3 +236,89 @@ body {
 .event-link:hover {
     color: #666; /* Light color on hover */
 }
+/* Event Details Styles */
+#event-details {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-header {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.event-name {
+    font-size: 40px;
+    font-family: 'League Spartan Bold';
+    color: #333;
+}
+
+.event-meta {
+    margin-top: 10px;
+}
+
+.event-meta p {
+    font-size: 25px;
+    font-family: 'Quicksand';
+    color: #555;
+    margin: 5px 0;
+    padding: 5px;
+}
+
+.event-description h2 {
+    font-size: 30px;
+    font-family: 'League Spartan Bold';
+    color: #333;
+}
+
+.event-description p {
+    font-size: 18px;
+    font-family: 'Quicksand';
+    color: #555;
+    line-height: 1.6;
+}
+.event-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 20px;
+}
+
+.edit-button, .delete-button {
+    background-color: #F1EFE7;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #ddd;
+}
+
+.edit-button {
+    background-color: green; /* Gray background for Edit */
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red background for Delete */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
