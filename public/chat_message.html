@@ -3,7 +3,7 @@
         <title>Chat</title>    
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/chat_message.css">
     </head>
     <body style="margin:0">
 
@@ -21,30 +21,52 @@
 
         <div id="middle">
             <div id="head">
-                <p id="header">CHAT</p>
+                <p id="header">CHAT NAME SAMPLE</p>
             </div>
             <div id="navigate">
-                <a href="events_page_detailed.html"><button type="button" id="event">🡨 Sample Event</button></a>
-                <input type="search" id="search"placeholder="Search...">
+                <a href="chat.html"><button type="button" id="event">🡨 Chats</button></a>
+               
             </div>
-            <div id="entries">
-                <div id="entry">
-                    <button type="button" id="trashbutton">
-                        <img src="css/trash_icon.png" id="trashicon">
-                    </button>
-                    <a href="chat_message.html"><p id= "name">Chat Name</p></a>
-                    <p id="message">User123: Hello There!</p>
-                </div>
-            <!--extra entries to fill the space-->
-                <!--entries are scrollable-->
-            <!--end of extra entries-->
-            </div>
-            <div id="containeradd">
-                
-                <button type="button" id="addbutton"><img src="css/plus_icon.png" class="btnicon">
-                    Create New Chat</button>
-            </div>
+<!-- Chat Section -->
+<div id="chat-container">
+    <div id="chat-window">
+        <!-- Messages will be displayed here -->
+        <div class="message received">
+            <p class="message-content">Hello! How can I help you today?</p>
+            <span class="timestamp">10:00 AM</span>
         </div>
+        <div class="message sent">
+            <p class="message-content">Hi! I have a question about my event.</p>
+            <span class="timestamp">10:01 AM</span>
+        </div>
+        <div class="message sent">
+            <p class="message-content">Hi! I have a question about my event.</p>
+            <span class="timestamp">10:01 AM</span>
+        </div>
+        <div class="message sent">
+            <p class="message-content">Hi! I have a question about my event.</p>
+            <span class="timestamp">10:01 AM</span>
+        </div>
+        <div class="message sent">
+            <p class="message-content">Hi! I have a question about my event.</p>
+            <span class="timestamp">10:01 AM</span>
+        </div>
+        <div class="message sent">
+            <p class="message-content">Hi! I have a question about my event.</p>
+            <span class="timestamp">10:01 AM</span>
+        </div> <div class="message sent">
+            <p class="message-content">Hi! I have a question about my event.</p>
+            <span class="timestamp">10:01 AM</span>
+        </div>
+
+        <!-- Add more messages here -->
+    </div>
+    <div id="chat-input">
+        <input type="text" id="message-input" placeholder="Type a message...">
+        <button type="button" id="send-button">Send</button>
+    </div>
+</div>
+</div>
         <div id="footer">
             <div id="container">
                 <a href="collaborators.html">
