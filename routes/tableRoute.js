@@ -10,7 +10,9 @@ const router = Router();
 const { format, parse } = require("date-fns");
 
 router.get("/tables", async (req, res) => {
-  var eventID = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+  //var eventID = "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+  var eventID = req.body.id || "6670eaea9dc29d82305a6761"; // Can be modified if the base events module is created
+
   var tables = await Table.find({ isSaved: true });
 
   try {

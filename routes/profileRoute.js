@@ -6,7 +6,8 @@ const router = Router();
 const { format, parse } = require("date-fns");
 
 router.get("/profile", async (req, res) => {
-  const userId = "6678ebfa40cbcf216a2c3c08"; // placeholder for user ID
+  //const userId = "6678ebfa40cbcf216a2c3c08"; // placeholder for user ID
+  const userId = req.query.id || "6678ebfa40cbcf216a2c3c08"; // placeholder for user ID
   const user = await User.findById(userId);
 
   res.render("profile", { user });
