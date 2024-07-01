@@ -80,6 +80,39 @@ app.get("/events", async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 });
+app.get('/api/events/:id', async (req, res) => {
+  try {
+      const event = await Event.findById(req.params.id);
+      if (!event) return res.status(404).send('Event not found');
+      res.send(event);
+  } catch (error) {
+      res.status(500).send('Server error');
+  }
+});
+
+// Update event by ID
+app.put('/api/events/:id', async (req, res) => {
+  try {
+      const event = await Event.findByIdAndUpdate(
+          req.params.id,
+          req.body,
+          { new: true, runValidators: true }
+      );
+      if (!event) return res.status(404).send('Event not found');
+      res.send(event);
+  } catch (error) {
+      res.status(500).send('Server error');
+  }
+});
+app.delete('/api/events/:id', async (req, res) => {
+  try {
+      const event = await Event.findByIdAndDelete(req.params.id);
+      if (!event) return res.status(404).send('Event not found');
+      res.send({ message: 'Event deleted successfully' });
+  } catch (error) {
+      res.status(500).send('Server error');
+  }
+});
 
 // Initializing handlebars
 var hbs = require("hbs");
